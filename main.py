@@ -56,7 +56,7 @@ free = (
 # 空き状況を色に変換
 
 df["color"] = pd.cut(
-    free, [0, 1, 5, 10, 100], right=False, labels=["black", "red", "yellow", "green"]
+    free, [0, 1, 5, 10, 100], right=False, labels=["black", "red", "orange", "green"]
 )
 
 # 保育園の位置情報を読み込み
