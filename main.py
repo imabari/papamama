@@ -93,9 +93,14 @@ df_map.to_csv(str(p_csv))
 map = folium.Map(
     location=[34.0662403, 132.9976865],
     zoom_start=14,
-    tiles="https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
-    attr='&copy; <a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>',
+    tiles=None,
 )
+
+folium.raster_layers.TileLayer(
+    tiles="https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
+    name="国土地理院",
+    attr='&copy; <a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>',
+).add_to(map)
 
 # 現在値
 folium.plugins.LocateControl(position="bottomright").add_to(map)
