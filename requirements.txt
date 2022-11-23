@@ -1,5 +1,5 @@
 beautifulsoup4
-camelot-py[cv]
+pdfplumber
 folium
 lxml
 pandas
