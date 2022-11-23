@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<head>    
+<html>
+<head>
+    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
         <script>
@@ -23,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_8716d73efa664b09869fd18c40cd7a61 {
+                #map_476fac099b86bc3dbae0d71c318897ad {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -32,20 +34,26 @@
                 }
             </style>
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
 </head>
-<body>    
+<body>
     
-            <div class="folium-map" id="map_8716d73efa664b09869fd18c40cd7a61" ></div>
+    
+            <div class="folium-map" id="map_476fac099b86bc3dbae0d71c318897ad" ></div>
         
 </body>
-<script>    
+<script>
     
-            var map_8716d73efa664b09869fd18c40cd7a61 = L.map(
-                "map_8716d73efa664b09869fd18c40cd7a61",
+    
+            var map_476fac099b86bc3dbae0d71c318897ad = L.map(
+                "map_476fac099b86bc3dbae0d71c318897ad",
                 {
-                    center: [34.066043, 132.997658],
+                    center: [34.0662403, 132.9976865],
                     crs: L.CRS.EPSG3857,
-                    zoom: 10,
+                    zoom: 14,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -55,959 +63,1401 @@
 
         
     
-            var tile_layer_079820358d654a329819c9a4615ff6b3 = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            var tile_layer_5d13c4a05697ad59cfa841b7f0f5aa60 = L.tileLayer(
+                "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://maps.gsi.go.jp/development/ichiran.html\"\u003e\u56fd\u571f\u5730\u7406\u9662\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_476fac099b86bc3dbae0d71c318897ad);
         
     
-            var marker_1d84e9f2bf484f6c94e9d5b24ae882bc = L.marker(
+            var locate_control_046d4283aaf7a73d2a24df1022226cda = L.control.locate(
+                {"position": "bottomright"}
+            ).addTo(map_476fac099b86bc3dbae0d71c318897ad);
+            
+        
+    
+            var measure_control_c86e9e482a7219cf934a2bfc138d8c03 = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "meters", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_476fac099b86bc3dbae0d71c318897ad.addControl(measure_control_c86e9e482a7219cf934a2bfc138d8c03);
+
+        
+    
+            var feature_group_0a6863165704484d67782eb921bac923 = L.featureGroup(
+                {}
+            ).addTo(map_476fac099b86bc3dbae0d71c318897ad);
+        
+    
+            var marker_0a5fecfdb93f89fa1ff6d80f9cb73b6d = L.marker(
                 [34.054302, 133.007296],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_d7c87b6775084d9299a616c30750df63 = L.AwesomeMarkers.icon(
+            var icon_37f52a9b07ac2029c5c05d9b2170cfec = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_1d84e9f2bf484f6c94e9d5b24ae882bc.setIcon(icon_d7c87b6775084d9299a616c30750df63);
+            marker_0a5fecfdb93f89fa1ff6d80f9cb73b6d.setIcon(icon_37f52a9b07ac2029c5c05d9b2170cfec);
         
     
-        var popup_8d1f11354a094654b4614c0c42d0b7c7 = L.popup({"maxWidth": 300});
+        var popup_5c6be90af14810fdff4b399169e3d6fd = L.popup({"maxWidth": 300});
 
         
-            var html_0ce9c7e9e7c644bbb6a06196f2127dab = $(`<div id="html_0ce9c7e9e7c644bbb6a06196f2127dab" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>鳥生保育所</td></tr><tr><th>所在地</th><td>今治市北鳥生町3丁目1-15</td></tr><tr><th>電話番号</th><td>0898-22-3749</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_8d1f11354a094654b4614c0c42d0b7c7.setContent(html_0ce9c7e9e7c644bbb6a06196f2127dab);
+            
+                var html_63db4729d51f66474d1ba9b74d5593ad = $(`<div id="html_63db4729d51f66474d1ba9b74d5593ad" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>鳥生保育所</td></tr><tr><th>所在地</th><td>今治市北鳥生町3丁目1-15</td></tr><tr><th>電話番号</th><td>0898-22-3749</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_5c6be90af14810fdff4b399169e3d6fd.setContent(html_63db4729d51f66474d1ba9b74d5593ad);
+            
         
 
-        marker_1d84e9f2bf484f6c94e9d5b24ae882bc.bindPopup(popup_8d1f11354a094654b4614c0c42d0b7c7)
+        marker_0a5fecfdb93f89fa1ff6d80f9cb73b6d.bindPopup(popup_5c6be90af14810fdff4b399169e3d6fd)
         ;
 
         
     
     
-            var marker_a692f82317d34aa69999a1592fbc7aee = L.marker(
+            var marker_2a1548584655e672f53946702ac2ecde = L.marker(
                 [34.057515, 132.993141],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_3d4d41c726f74b538e5230f63625e611 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            var icon_797796637c5ea9454e5f5500501d5976 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_a692f82317d34aa69999a1592fbc7aee.setIcon(icon_3d4d41c726f74b538e5230f63625e611);
+            marker_2a1548584655e672f53946702ac2ecde.setIcon(icon_797796637c5ea9454e5f5500501d5976);
         
     
-        var popup_1256deeb03174ec499a1eb16e09f269a = L.popup({"maxWidth": 300});
+        var popup_ad8f87b8b6b4e181df379a3d62773042 = L.popup({"maxWidth": 300});
 
         
-            var html_4a0fe896cc3744e19c945703f52fe963 = $(`<div id="html_4a0fe896cc3744e19c945703f52fe963" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>常盤保育所</td></tr><tr><th>所在地</th><td>今治市南日吉町2丁目2-8</td></tr><tr><th>電話番号</th><td>0898-31-5058</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_1256deeb03174ec499a1eb16e09f269a.setContent(html_4a0fe896cc3744e19c945703f52fe963);
+            
+                var html_f0b4f20cb9d725f5523fd0ac3c4dd777 = $(`<div id="html_f0b4f20cb9d725f5523fd0ac3c4dd777" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>常盤保育所</td></tr><tr><th>所在地</th><td>今治市南日吉町2丁目2-8</td></tr><tr><th>電話番号</th><td>0898-31-5058</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_ad8f87b8b6b4e181df379a3d62773042.setContent(html_f0b4f20cb9d725f5523fd0ac3c4dd777);
+            
         
 
-        marker_a692f82317d34aa69999a1592fbc7aee.bindPopup(popup_1256deeb03174ec499a1eb16e09f269a)
+        marker_2a1548584655e672f53946702ac2ecde.bindPopup(popup_ad8f87b8b6b4e181df379a3d62773042)
         ;
 
         
     
     
-            var marker_ca9ad5a90edb48d3b8a9a3659af7184b = L.marker(
+            var marker_3f5b781a199f2992e1175b6c64761f40 = L.marker(
                 [34.059432, 133.011638],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_8f71efa35be94f27a806c6235b86a01b = L.AwesomeMarkers.icon(
+            var icon_83406788d232f2d746dfa9f0b7ab152a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_ca9ad5a90edb48d3b8a9a3659af7184b.setIcon(icon_8f71efa35be94f27a806c6235b86a01b);
+            marker_3f5b781a199f2992e1175b6c64761f40.setIcon(icon_83406788d232f2d746dfa9f0b7ab152a);
         
     
-        var popup_06a58b37566e4d248a4af04336987a0a = L.popup({"maxWidth": 300});
+        var popup_272cc43b7b7e1eb3a796fefdb5978028 = L.popup({"maxWidth": 300});
 
         
-            var html_b4bf5de4cb124a3fbd7d0608a682095c = $(`<div id="html_b4bf5de4cb124a3fbd7d0608a682095c" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>城東保育所</td></tr><tr><th>所在地</th><td>今治市美須賀町4丁目1-48</td></tr><tr><th>電話番号</th><td>0898-22-3451</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_06a58b37566e4d248a4af04336987a0a.setContent(html_b4bf5de4cb124a3fbd7d0608a682095c);
+            
+                var html_a05862805bdfd51ed560771d0fa52c13 = $(`<div id="html_a05862805bdfd51ed560771d0fa52c13" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>城東保育所</td></tr><tr><th>所在地</th><td>今治市美須賀町4丁目1-48</td></tr><tr><th>電話番号</th><td>0898-22-3451</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_272cc43b7b7e1eb3a796fefdb5978028.setContent(html_a05862805bdfd51ed560771d0fa52c13);
+            
         
 
-        marker_ca9ad5a90edb48d3b8a9a3659af7184b.bindPopup(popup_06a58b37566e4d248a4af04336987a0a)
+        marker_3f5b781a199f2992e1175b6c64761f40.bindPopup(popup_272cc43b7b7e1eb3a796fefdb5978028)
         ;
 
         
     
     
-            var marker_16f27827549d4841985e4e37a04a782b = L.marker(
-                [34.071424, 132.99652],
-                {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
-        
-    
-            var icon_454e9713490142ab814030ff603a7beb = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_16f27827549d4841985e4e37a04a782b.setIcon(icon_454e9713490142ab814030ff603a7beb);
-        
-    
-        var popup_854d357d9c3d4bc98dc1654ee86968ba = L.popup({"maxWidth": 300});
-
-        
-            var html_cad2d411dc9f40bd8242428a11d0af51 = $(`<div id="html_cad2d411dc9f40bd8242428a11d0af51" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>別宮保育所</td></tr><tr><th>所在地</th><td>今治市大正町4丁目2-１0</td></tr><tr><th>電話番号</th><td>0898-32-7126</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_854d357d9c3d4bc98dc1654ee86968ba.setContent(html_cad2d411dc9f40bd8242428a11d0af51);
-        
-
-        marker_16f27827549d4841985e4e37a04a782b.bindPopup(popup_854d357d9c3d4bc98dc1654ee86968ba)
-        ;
-
-        
-    
-    
-            var marker_c3ed859e3c7941cb89dff96f03c1b995 = L.marker(
+            var marker_b3e0e0a7888e3d2e006eaeba6cd10aec = L.marker(
                 [34.063498, 132.957147],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_19f332c9b7cc49be8499e37f6b6cf095 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            var icon_d00a4acc117c97f41d6d22b34c53d8fd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_c3ed859e3c7941cb89dff96f03c1b995.setIcon(icon_19f332c9b7cc49be8499e37f6b6cf095);
+            marker_b3e0e0a7888e3d2e006eaeba6cd10aec.setIcon(icon_d00a4acc117c97f41d6d22b34c53d8fd);
         
     
-        var popup_93dfda48d76c494590c2d081f7953a15 = L.popup({"maxWidth": 300});
+        var popup_f5cac48e0051c87fa943660c64d340f8 = L.popup({"maxWidth": 300});
 
         
-            var html_8238729b32f84342a193de3f40dcec5a = $(`<div id="html_8238729b32f84342a193de3f40dcec5a" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>乃万保育所</td></tr><tr><th>所在地</th><td>今治市延喜甲365-2</td></tr><tr><th>電話番号</th><td>0898-22-6289</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_93dfda48d76c494590c2d081f7953a15.setContent(html_8238729b32f84342a193de3f40dcec5a);
+            
+                var html_99b19750274934eb3d21ceea1c781101 = $(`<div id="html_99b19750274934eb3d21ceea1c781101" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>乃万保育所</td></tr><tr><th>所在地</th><td>今治市延喜甲365-2</td></tr><tr><th>電話番号</th><td>0898-22-6289</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_f5cac48e0051c87fa943660c64d340f8.setContent(html_99b19750274934eb3d21ceea1c781101);
+            
         
 
-        marker_c3ed859e3c7941cb89dff96f03c1b995.bindPopup(popup_93dfda48d76c494590c2d081f7953a15)
+        marker_b3e0e0a7888e3d2e006eaeba6cd10aec.bindPopup(popup_f5cac48e0051c87fa943660c64d340f8)
         ;
 
         
     
     
-            var marker_3610dd7c12f04ed8bfda2b570fdcf321 = L.marker(
+            var marker_4c65f61882eef77b7f1d3c55e74391c2 = L.marker(
                 [34.046119, 132.975335],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_033d84b0a2f2434881c4755986fa4eb4 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            var icon_e9c7350a6a46341b4d45cb51e5ef4309 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_3610dd7c12f04ed8bfda2b570fdcf321.setIcon(icon_033d84b0a2f2434881c4755986fa4eb4);
+            marker_4c65f61882eef77b7f1d3c55e74391c2.setIcon(icon_e9c7350a6a46341b4d45cb51e5ef4309);
         
     
-        var popup_a1cc3da547ba4eb6b54c4930b9cb04d9 = L.popup({"maxWidth": 300});
+        var popup_2625555504751899201ea35648cd8521 = L.popup({"maxWidth": 300});
 
         
-            var html_a22cbab60418457b85679d42deea0f7e = $(`<div id="html_a22cbab60418457b85679d42deea0f7e" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>日高保育所</td></tr><tr><th>所在地</th><td>今治市別名549-1</td></tr><tr><th>電話番号</th><td>0898-23-1512</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_a1cc3da547ba4eb6b54c4930b9cb04d9.setContent(html_a22cbab60418457b85679d42deea0f7e);
+            
+                var html_a8e0a69b3305c8ca0661cda1874bf905 = $(`<div id="html_a8e0a69b3305c8ca0661cda1874bf905" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>日高保育所</td></tr><tr><th>所在地</th><td>今治市別名549-1</td></tr><tr><th>電話番号</th><td>0898-23-1512</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_2625555504751899201ea35648cd8521.setContent(html_a8e0a69b3305c8ca0661cda1874bf905);
+            
         
 
-        marker_3610dd7c12f04ed8bfda2b570fdcf321.bindPopup(popup_a1cc3da547ba4eb6b54c4930b9cb04d9)
+        marker_4c65f61882eef77b7f1d3c55e74391c2.bindPopup(popup_2625555504751899201ea35648cd8521)
         ;
 
         
     
     
-            var marker_754c7688a2684ba0aca116057bb53b1b = L.marker(
+            var marker_764871332ec11a7f14e9e2c7fbf39f63 = L.marker(
                 [34.032707, 133.012564],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_7c64b3ef6cd14934ae6a313a21f29e99 = L.AwesomeMarkers.icon(
+            var icon_811e1184810a8796fb42d7da22c3992c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_754c7688a2684ba0aca116057bb53b1b.setIcon(icon_7c64b3ef6cd14934ae6a313a21f29e99);
+            marker_764871332ec11a7f14e9e2c7fbf39f63.setIcon(icon_811e1184810a8796fb42d7da22c3992c);
         
     
-        var popup_cd6dc01487164de5b3775a6a8897d8c2 = L.popup({"maxWidth": 300});
+        var popup_8ef5d5c93454162525739951c23990a3 = L.popup({"maxWidth": 300});
 
         
-            var html_4b7c4902623842548661e52425133a2e = $(`<div id="html_4b7c4902623842548661e52425133a2e" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>富田保育所</td></tr><tr><th>所在地</th><td>今治市上徳乙287-7</td></tr><tr><th>電話番号</th><td>0898-48-2323</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_cd6dc01487164de5b3775a6a8897d8c2.setContent(html_4b7c4902623842548661e52425133a2e);
+            
+                var html_1cd31c6686aa0b1d92eb4501a4a7d99e = $(`<div id="html_1cd31c6686aa0b1d92eb4501a4a7d99e" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>富田保育所</td></tr><tr><th>所在地</th><td>今治市上徳乙287-7</td></tr><tr><th>電話番号</th><td>0898-48-2323</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_8ef5d5c93454162525739951c23990a3.setContent(html_1cd31c6686aa0b1d92eb4501a4a7d99e);
+            
         
 
-        marker_754c7688a2684ba0aca116057bb53b1b.bindPopup(popup_cd6dc01487164de5b3775a6a8897d8c2)
+        marker_764871332ec11a7f14e9e2c7fbf39f63.bindPopup(popup_8ef5d5c93454162525739951c23990a3)
         ;
 
         
     
     
-            var marker_11fa3901ad1e411f874527b6f86ff294 = L.marker(
+            var marker_4e18f7f41b6fd9f2ef66b6dc50b8f28a = L.marker(
                 [34.022279, 133.021928],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_261a1019e7ac40d7b9b88573eb32d989 = L.AwesomeMarkers.icon(
+            var icon_61e54959f036b0eaf0a3c95a84b934c6 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_11fa3901ad1e411f874527b6f86ff294.setIcon(icon_261a1019e7ac40d7b9b88573eb32d989);
+            marker_4e18f7f41b6fd9f2ef66b6dc50b8f28a.setIcon(icon_61e54959f036b0eaf0a3c95a84b934c6);
         
     
-        var popup_1d06f43976a24b8b930e3f65d90024a4 = L.popup({"maxWidth": 300});
+        var popup_83d256325883b8c9141b2423a954202e = L.popup({"maxWidth": 300});
 
         
-            var html_cdc0ad50d62d4d03a05f35ab18a05c64 = $(`<div id="html_cdc0ad50d62d4d03a05f35ab18a05c64" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>桜井保育所</td></tr><tr><th>所在地</th><td>今治市登畑甲40</td></tr><tr><th>電話番号</th><td>0898-48-0555</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_1d06f43976a24b8b930e3f65d90024a4.setContent(html_cdc0ad50d62d4d03a05f35ab18a05c64);
+            
+                var html_1ffed40946e020109af2fc2baf9355f2 = $(`<div id="html_1ffed40946e020109af2fc2baf9355f2" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>桜井保育所</td></tr><tr><th>所在地</th><td>今治市登畑甲40</td></tr><tr><th>電話番号</th><td>0898-48-0555</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_83d256325883b8c9141b2423a954202e.setContent(html_1ffed40946e020109af2fc2baf9355f2);
+            
         
 
-        marker_11fa3901ad1e411f874527b6f86ff294.bindPopup(popup_1d06f43976a24b8b930e3f65d90024a4)
+        marker_4e18f7f41b6fd9f2ef66b6dc50b8f28a.bindPopup(popup_83d256325883b8c9141b2423a954202e)
         ;
 
         
     
     
-            var marker_76f08df91fcd4aefaa66a3de99502eee = L.marker(
+            var marker_c15981777c0b4d0de90a41e17541d55a = L.marker(
                 [34.026563, 132.964389],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_64302f2f4689487f949524fb29ffb0c9 = L.AwesomeMarkers.icon(
+            var icon_cd1eac578827fddcd5b07722b3b80c1b = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_76f08df91fcd4aefaa66a3de99502eee.setIcon(icon_64302f2f4689487f949524fb29ffb0c9);
+            marker_c15981777c0b4d0de90a41e17541d55a.setIcon(icon_cd1eac578827fddcd5b07722b3b80c1b);
         
     
-        var popup_59faf2538cdc48c6a395bc903dc957cb = L.popup({"maxWidth": 300});
+        var popup_211f03be0828c94778441fef2b9906c8 = L.popup({"maxWidth": 300});
 
         
-            var html_55b539ea0e8a4bb4a6c751737f231beb = $(`<div id="html_55b539ea0e8a4bb4a6c751737f231beb" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>日の出保育所</td></tr><tr><th>所在地</th><td>今治市玉川町小鴨部甲230-2</td></tr><tr><th>電話番号</th><td>0898-55-3032</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_59faf2538cdc48c6a395bc903dc957cb.setContent(html_55b539ea0e8a4bb4a6c751737f231beb);
+            
+                var html_5bd7a87fa79814302758c45de7d15fb8 = $(`<div id="html_5bd7a87fa79814302758c45de7d15fb8" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>日の出保育所</td></tr><tr><th>所在地</th><td>今治市玉川町小鴨部甲230-2</td></tr><tr><th>電話番号</th><td>0898-55-3032</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_211f03be0828c94778441fef2b9906c8.setContent(html_5bd7a87fa79814302758c45de7d15fb8);
+            
         
 
-        marker_76f08df91fcd4aefaa66a3de99502eee.bindPopup(popup_59faf2538cdc48c6a395bc903dc957cb)
+        marker_c15981777c0b4d0de90a41e17541d55a.bindPopup(popup_211f03be0828c94778441fef2b9906c8)
         ;
 
         
     
     
-            var marker_a4067aec9c3046d490f5320b52bc7363 = L.marker(
+            var marker_17667829a2c61f240e2266dfe003ebe1 = L.marker(
                 [34.021154, 132.944133],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_db5921ea6421465aa586ed2c35dc4224 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            var icon_2409b64517e9c8672a0852a98e39d69e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_a4067aec9c3046d490f5320b52bc7363.setIcon(icon_db5921ea6421465aa586ed2c35dc4224);
+            marker_17667829a2c61f240e2266dfe003ebe1.setIcon(icon_2409b64517e9c8672a0852a98e39d69e);
         
     
-        var popup_48be3ca0990341369d7bc04b4068a487 = L.popup({"maxWidth": 300});
+        var popup_944c9ff70966597f6fe9b655d5cd344d = L.popup({"maxWidth": 300});
 
         
-            var html_ead4d1db789c49608c908ec22ddd4da0 = $(`<div id="html_ead4d1db789c49608c908ec22ddd4da0" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>九和保育所</td></tr><tr><th>所在地</th><td>今治市玉川町大野甲86-3</td></tr><tr><th>電話番号</th><td>0898-55-3132</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_48be3ca0990341369d7bc04b4068a487.setContent(html_ead4d1db789c49608c908ec22ddd4da0);
+            
+                var html_e2579aa4d3f783353ab9af7a46757525 = $(`<div id="html_e2579aa4d3f783353ab9af7a46757525" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>九和保育所</td></tr><tr><th>所在地</th><td>今治市玉川町大野甲86-3</td></tr><tr><th>電話番号</th><td>0898-55-3132</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>○</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_944c9ff70966597f6fe9b655d5cd344d.setContent(html_e2579aa4d3f783353ab9af7a46757525);
+            
         
 
-        marker_a4067aec9c3046d490f5320b52bc7363.bindPopup(popup_48be3ca0990341369d7bc04b4068a487)
+        marker_17667829a2c61f240e2266dfe003ebe1.bindPopup(popup_944c9ff70966597f6fe9b655d5cd344d)
         ;
 
         
     
     
-            var marker_56223fa5c47d431e90f47ab02a5b5138 = L.marker(
+            var marker_e7b568b123d3bd05fddca05edbe0b162 = L.marker(
                 [34.101247, 132.947425],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_75b0cff6d1324874aef8cc47540432b1 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            var icon_71c8d30b003cf1192e739d9e7b2196a8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_56223fa5c47d431e90f47ab02a5b5138.setIcon(icon_75b0cff6d1324874aef8cc47540432b1);
+            marker_e7b568b123d3bd05fddca05edbe0b162.setIcon(icon_71c8d30b003cf1192e739d9e7b2196a8);
         
     
-        var popup_139264d1f81a4748b1ebe4ab798ad2c4 = L.popup({"maxWidth": 300});
+        var popup_7336e32846edc77a0bb56341043b2c18 = L.popup({"maxWidth": 300});
 
         
-            var html_e2cf22d6942f4334b88ac1e40faf9e70 = $(`<div id="html_e2cf22d6942f4334b88ac1e40faf9e70" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>樋口保育所</td></tr><tr><th>所在地</th><td>今治市波方町養老甲1024</td></tr><tr><th>電話番号</th><td>0898-41-7241</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>○</td></tr><tr><th>３歳</th><td>○</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_139264d1f81a4748b1ebe4ab798ad2c4.setContent(html_e2cf22d6942f4334b88ac1e40faf9e70);
+            
+                var html_0887065c4458f9f9167a7cf9e9210445 = $(`<div id="html_0887065c4458f9f9167a7cf9e9210445" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>樋口保育所</td></tr><tr><th>所在地</th><td>今治市波方町養老甲1024</td></tr><tr><th>電話番号</th><td>0898-41-7241</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_7336e32846edc77a0bb56341043b2c18.setContent(html_0887065c4458f9f9167a7cf9e9210445);
+            
         
 
-        marker_56223fa5c47d431e90f47ab02a5b5138.bindPopup(popup_139264d1f81a4748b1ebe4ab798ad2c4)
+        marker_e7b568b123d3bd05fddca05edbe0b162.bindPopup(popup_7336e32846edc77a0bb56341043b2c18)
         ;
 
         
     
     
-            var marker_d104259681c849999422ddcca97d1856 = L.marker(
+            var marker_c3c71949380d0caa9c8de728c77a4f58 = L.marker(
                 [34.05471, 132.874939],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_bf44d5fd2bd44068a99629dde9ffec55 = L.AwesomeMarkers.icon(
+            var icon_468e2ad79b8b2066ae281bb6ebc0508d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_d104259681c849999422ddcca97d1856.setIcon(icon_bf44d5fd2bd44068a99629dde9ffec55);
+            marker_c3c71949380d0caa9c8de728c77a4f58.setIcon(icon_468e2ad79b8b2066ae281bb6ebc0508d);
         
     
-        var popup_5f402e2d51cb42ecacd0358c26cca5cd = L.popup({"maxWidth": 300});
+        var popup_47b04af263a5e41552f9917fd4fbb1a3 = L.popup({"maxWidth": 300});
 
         
-            var html_b5020a390dc541df980e252a245ab327 = $(`<div id="html_b5020a390dc541df980e252a245ab327" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>亀岡保育所</td></tr><tr><th>所在地</th><td>今治市菊間町佐方490</td></tr><tr><th>電話番号</th><td>0898-54-5022</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>○</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
-            popup_5f402e2d51cb42ecacd0358c26cca5cd.setContent(html_b5020a390dc541df980e252a245ab327);
+            
+                var html_c9979718b8c44a6239490e11731ea20c = $(`<div id="html_c9979718b8c44a6239490e11731ea20c" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>亀岡保育所</td></tr><tr><th>所在地</th><td>今治市菊間町佐方490</td></tr><tr><th>電話番号</th><td>0898-54-5022</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
+                popup_47b04af263a5e41552f9917fd4fbb1a3.setContent(html_c9979718b8c44a6239490e11731ea20c);
+            
         
 
-        marker_d104259681c849999422ddcca97d1856.bindPopup(popup_5f402e2d51cb42ecacd0358c26cca5cd)
+        marker_c3c71949380d0caa9c8de728c77a4f58.bindPopup(popup_47b04af263a5e41552f9917fd4fbb1a3)
         ;
 
         
     
     
-            var marker_e01db725518248da96782e1da4cf63d7 = L.marker(
+            var marker_90e6ebaea9c050f564435a84fcccb2d5 = L.marker(
                 [34.032671, 132.845044],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_e24d955cf6ff41eea1f55718a7512cc5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            var icon_3d4a606715e675ad515f83ba717c9da7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_e01db725518248da96782e1da4cf63d7.setIcon(icon_e24d955cf6ff41eea1f55718a7512cc5);
+            marker_90e6ebaea9c050f564435a84fcccb2d5.setIcon(icon_3d4a606715e675ad515f83ba717c9da7);
         
     
-        var popup_7b21a890262a4f1dbc5939604e44a26d = L.popup({"maxWidth": 300});
+        var popup_2fb74e42c21f3616a0c2445eab7526d3 = L.popup({"maxWidth": 300});
 
         
-            var html_b4abd575e4b54b6f8ffbd5151f5ed4bd = $(`<div id="html_b4abd575e4b54b6f8ffbd5151f5ed4bd" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>菊間保育所</td></tr><tr><th>所在地</th><td>今治市菊間町長坂1999</td></tr><tr><th>電話番号</th><td>0898-54-2209</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_7b21a890262a4f1dbc5939604e44a26d.setContent(html_b4abd575e4b54b6f8ffbd5151f5ed4bd);
+            
+                var html_71da1d9cd5f92fcabd35255385bf963d = $(`<div id="html_71da1d9cd5f92fcabd35255385bf963d" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>菊間保育所</td></tr><tr><th>所在地</th><td>今治市菊間町長坂1999</td></tr><tr><th>電話番号</th><td>0898-54-2209</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_2fb74e42c21f3616a0c2445eab7526d3.setContent(html_71da1d9cd5f92fcabd35255385bf963d);
+            
         
 
-        marker_e01db725518248da96782e1da4cf63d7.bindPopup(popup_7b21a890262a4f1dbc5939604e44a26d)
+        marker_90e6ebaea9c050f564435a84fcccb2d5.bindPopup(popup_2fb74e42c21f3616a0c2445eab7526d3)
         ;
 
         
     
     
-            var marker_0f68341cb5414d17844535af3fa18902 = L.marker(
+            var marker_fdaeb87424c493c6a7192ddb19852e97 = L.marker(
                 [34.146934, 133.045082],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_6f859b0168804b3d8ac7b4db312e4e87 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            var icon_55d9b62b14b3c58c9b13f9f3f6be3aa2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_0f68341cb5414d17844535af3fa18902.setIcon(icon_6f859b0168804b3d8ac7b4db312e4e87);
+            marker_fdaeb87424c493c6a7192ddb19852e97.setIcon(icon_55d9b62b14b3c58c9b13f9f3f6be3aa2);
         
     
-        var popup_934838df97cc48bcafaa4a7528edc8de = L.popup({"maxWidth": 300});
+        var popup_071ceb13f0f73fda7b809af76e2a5805 = L.popup({"maxWidth": 300});
 
         
-            var html_b8a1923ea6404b6f968d2441a628f887 = $(`<div id="html_b8a1923ea6404b6f968d2441a628f887" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>吉海認定こども園</td></tr><tr><th>所在地</th><td>今治市吉海町八幡56</td></tr><tr><th>電話番号</th><td>0897-84-2108</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>○</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
-            popup_934838df97cc48bcafaa4a7528edc8de.setContent(html_b8a1923ea6404b6f968d2441a628f887);
+            
+                var html_9ed429260be7657001adb5c451587835 = $(`<div id="html_9ed429260be7657001adb5c451587835" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>吉海認定こども園</td></tr><tr><th>所在地</th><td>今治市吉海町八幡56</td></tr><tr><th>電話番号</th><td>0897-84-2108</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_071ceb13f0f73fda7b809af76e2a5805.setContent(html_9ed429260be7657001adb5c451587835);
+            
         
 
-        marker_0f68341cb5414d17844535af3fa18902.bindPopup(popup_934838df97cc48bcafaa4a7528edc8de)
+        marker_fdaeb87424c493c6a7192ddb19852e97.bindPopup(popup_071ceb13f0f73fda7b809af76e2a5805)
         ;
 
         
     
     
-            var marker_58e60913682747988c433550d1edda3d = L.marker(
+            var marker_0ec4bacf9466755891d9dbaea586b963 = L.marker(
                 [34.171124, 133.075152],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_e74a3704b01e499380244844066b160c = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            var icon_9bf0e1c1073f1421758ad852d9d9fded = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_58e60913682747988c433550d1edda3d.setIcon(icon_e74a3704b01e499380244844066b160c);
+            marker_0ec4bacf9466755891d9dbaea586b963.setIcon(icon_9bf0e1c1073f1421758ad852d9d9fded);
         
     
-        var popup_f9606cef550b4f68b4931bafda3ac6ae = L.popup({"maxWidth": 300});
+        var popup_9d643b0fbefd0b25eb3694cd6a04daa5 = L.popup({"maxWidth": 300});
 
         
-            var html_ed6445e209664fa981b892dfd532e0f1 = $(`<div id="html_ed6445e209664fa981b892dfd532e0f1" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>宮窪認定こども園</td></tr><tr><th>所在地</th><td>今治市宮窪町宮窪2901</td></tr><tr><th>電話番号</th><td>0897-86-3412</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>○</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
-            popup_f9606cef550b4f68b4931bafda3ac6ae.setContent(html_ed6445e209664fa981b892dfd532e0f1);
+            
+                var html_96935a5452ae34e12866e4505544ad55 = $(`<div id="html_96935a5452ae34e12866e4505544ad55" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>宮窪認定こども園</td></tr><tr><th>所在地</th><td>今治市宮窪町宮窪2901</td></tr><tr><th>電話番号</th><td>0897-86-3412</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
+                popup_9d643b0fbefd0b25eb3694cd6a04daa5.setContent(html_96935a5452ae34e12866e4505544ad55);
+            
         
 
-        marker_58e60913682747988c433550d1edda3d.bindPopup(popup_f9606cef550b4f68b4931bafda3ac6ae)
+        marker_0ec4bacf9466755891d9dbaea586b963.bindPopup(popup_9d643b0fbefd0b25eb3694cd6a04daa5)
         ;
 
         
     
     
-            var marker_87745118b4d54780b60b1524fee86759 = L.marker(
+            var marker_bc8b19649d6dc2a1f821bac72fa40a55 = L.marker(
                 [34.205914, 133.112225],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_e2c7b536a4254104bfd34115653ee405 = L.AwesomeMarkers.icon(
+            var icon_2f3f96a8b391f49cb8b1f160c0fec67b = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_87745118b4d54780b60b1524fee86759.setIcon(icon_e2c7b536a4254104bfd34115653ee405);
+            marker_bc8b19649d6dc2a1f821bac72fa40a55.setIcon(icon_2f3f96a8b391f49cb8b1f160c0fec67b);
         
     
-        var popup_9937e2ce8014452ea0046e0d20c1f4f2 = L.popup({"maxWidth": 300});
+        var popup_98a9e0dca904ee1042dd37500fdb2b93 = L.popup({"maxWidth": 300});
 
         
-            var html_4cfbe51bc17c42a6ac8bcfb078523ed3 = $(`<div id="html_4cfbe51bc17c42a6ac8bcfb078523ed3" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>伯方認定こども園</td></tr><tr><th>所在地</th><td>今治市伯方町木浦甲1200-1</td></tr><tr><th>電話番号</th><td>0897-72-0227</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
-            popup_9937e2ce8014452ea0046e0d20c1f4f2.setContent(html_4cfbe51bc17c42a6ac8bcfb078523ed3);
+            
+                var html_aceeba67258ee1e84d729ff1773f3eed = $(`<div id="html_aceeba67258ee1e84d729ff1773f3eed" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>伯方認定こども園</td></tr><tr><th>所在地</th><td>今治市伯方町木浦甲1200-1</td></tr><tr><th>電話番号</th><td>0897-72-0227</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
+                popup_98a9e0dca904ee1042dd37500fdb2b93.setContent(html_aceeba67258ee1e84d729ff1773f3eed);
+            
         
 
-        marker_87745118b4d54780b60b1524fee86759.bindPopup(popup_9937e2ce8014452ea0046e0d20c1f4f2)
+        marker_bc8b19649d6dc2a1f821bac72fa40a55.bindPopup(popup_98a9e0dca904ee1042dd37500fdb2b93)
         ;
 
         
     
     
-            var marker_3dc4b0e6d1ee4b4bb08b91d8b59cd0f6 = L.marker(
+            var marker_57300f814a3b8f26af80b72ad68e2632 = L.marker(
                 [34.263485, 133.037943],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_26afb71af1be41f4b5d4f7abe90d9653 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            var icon_1cd2d45a83cd2abec48b6b5cf7575dbf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_3dc4b0e6d1ee4b4bb08b91d8b59cd0f6.setIcon(icon_26afb71af1be41f4b5d4f7abe90d9653);
+            marker_57300f814a3b8f26af80b72ad68e2632.setIcon(icon_1cd2d45a83cd2abec48b6b5cf7575dbf);
         
     
-        var popup_107c9dacd13d4283997512df65137b90 = L.popup({"maxWidth": 300});
+        var popup_07806f21c1bbe35821226b87c34010f1 = L.popup({"maxWidth": 300});
 
         
-            var html_0f5ad9183a7d47248d370fe9c2c4b257 = $(`<div id="html_0f5ad9183a7d47248d370fe9c2c4b257" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>上浦認定こども園</td></tr><tr><th>所在地</th><td>今治市上浦町井口5931-1</td></tr><tr><th>電話番号</th><td>0897-87-2385</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>○</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_107c9dacd13d4283997512df65137b90.setContent(html_0f5ad9183a7d47248d370fe9c2c4b257);
+            
+                var html_ca69b5745ee0c5b2a1945dfd4ad627d7 = $(`<div id="html_ca69b5745ee0c5b2a1945dfd4ad627d7" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>上浦認定こども園</td></tr><tr><th>所在地</th><td>今治市上浦町井口5931-1</td></tr><tr><th>電話番号</th><td>0897-87-2385</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>○</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_07806f21c1bbe35821226b87c34010f1.setContent(html_ca69b5745ee0c5b2a1945dfd4ad627d7);
+            
         
 
-        marker_3dc4b0e6d1ee4b4bb08b91d8b59cd0f6.bindPopup(popup_107c9dacd13d4283997512df65137b90)
+        marker_57300f814a3b8f26af80b72ad68e2632.bindPopup(popup_07806f21c1bbe35821226b87c34010f1)
         ;
 
         
     
     
-            var marker_636979380e884437b390f641c1c7c09c = L.marker(
+            var marker_7ad1bc78478984e22c2b0b1ed2f0ebe2 = L.marker(
                 [34.25139, 132.997168],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_1be9d9e3b49b495bb77e02fd694821e7 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            var icon_78103d91e6781978a377eaeb52fc2ef0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_636979380e884437b390f641c1c7c09c.setIcon(icon_1be9d9e3b49b495bb77e02fd694821e7);
+            marker_7ad1bc78478984e22c2b0b1ed2f0ebe2.setIcon(icon_78103d91e6781978a377eaeb52fc2ef0);
         
     
-        var popup_8e146b997cf4433981ff7096dcd4fc83 = L.popup({"maxWidth": 300});
+        var popup_fd889bfa6fd810569fb698a90a895c4d = L.popup({"maxWidth": 300});
 
         
-            var html_9f0a0064cbf7467fa01a28bdaf32f064 = $(`<div id="html_9f0a0064cbf7467fa01a28bdaf32f064" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>大三島認定こども園</td></tr><tr><th>所在地</th><td>今治市大三島町明日2493-1</td></tr><tr><th>電話番号</th><td>0897-82-0164</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
-            popup_8e146b997cf4433981ff7096dcd4fc83.setContent(html_9f0a0064cbf7467fa01a28bdaf32f064);
+            
+                var html_3609abe61b95d124d8cb1b66a1b32352 = $(`<div id="html_3609abe61b95d124d8cb1b66a1b32352" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>大三島認定こども園</td></tr><tr><th>所在地</th><td>今治市大三島町明日2493-1</td></tr><tr><th>電話番号</th><td>0897-82-0164</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_fd889bfa6fd810569fb698a90a895c4d.setContent(html_3609abe61b95d124d8cb1b66a1b32352);
+            
         
 
-        marker_636979380e884437b390f641c1c7c09c.bindPopup(popup_8e146b997cf4433981ff7096dcd4fc83)
+        marker_7ad1bc78478984e22c2b0b1ed2f0ebe2.bindPopup(popup_fd889bfa6fd810569fb698a90a895c4d)
         ;
 
         
     
     
-            var marker_88614ce3eb82462d9a0afe00fcd6983b = L.marker(
+            var marker_6604ba2e7ec81c648c5f126b83709525 = L.marker(
                 [34.052978, 133.012693],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_905f2144029c4702bd0de88ce0fb4937 = L.AwesomeMarkers.icon(
+            var icon_d308ef98d87450e8d0bfe33e8b5d4c5a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_88614ce3eb82462d9a0afe00fcd6983b.setIcon(icon_905f2144029c4702bd0de88ce0fb4937);
+            marker_6604ba2e7ec81c648c5f126b83709525.setIcon(icon_d308ef98d87450e8d0bfe33e8b5d4c5a);
         
     
-        var popup_57f21e146cc24d4590c11bb302e9bb22 = L.popup({"maxWidth": 300});
+        var popup_6dce07f71e449f672f8cf230898b6fe4 = L.popup({"maxWidth": 300});
 
         
-            var html_6ab335f100384c4c96c0736f5a29e882 = $(`<div id="html_6ab335f100384c4c96c0736f5a29e882" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>若葉保育園</td></tr><tr><th>所在地</th><td>今治市東村1丁目15-36</td></tr><tr><th>電話番号</th><td>0898-47-2080</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
-            popup_57f21e146cc24d4590c11bb302e9bb22.setContent(html_6ab335f100384c4c96c0736f5a29e882);
+            
+                var html_97b1f29c97c9acce392a918e719ce476 = $(`<div id="html_97b1f29c97c9acce392a918e719ce476" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>若葉保育園</td></tr><tr><th>所在地</th><td>今治市東村1丁目15-36</td></tr><tr><th>電話番号</th><td>0898-47-2080</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
+                popup_6dce07f71e449f672f8cf230898b6fe4.setContent(html_97b1f29c97c9acce392a918e719ce476);
+            
         
 
-        marker_88614ce3eb82462d9a0afe00fcd6983b.bindPopup(popup_57f21e146cc24d4590c11bb302e9bb22)
+        marker_6604ba2e7ec81c648c5f126b83709525.bindPopup(popup_6dce07f71e449f672f8cf230898b6fe4)
         ;
 
         
     
     
-            var marker_8e7158d5d36248439ea85287096065d2 = L.marker(
+            var marker_6c029a4db303065450008c697796ed0c = L.marker(
                 [34.018814, 133.0419922],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_132539cdb6104e65bf1eba4791470208 = L.AwesomeMarkers.icon(
+            var icon_698f2bc3c0a30b7cd07de8652fd1c5dd = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_8e7158d5d36248439ea85287096065d2.setIcon(icon_132539cdb6104e65bf1eba4791470208);
+            marker_6c029a4db303065450008c697796ed0c.setIcon(icon_698f2bc3c0a30b7cd07de8652fd1c5dd);
         
     
-        var popup_1592366205c64932a6548bb7ff0570dd = L.popup({"maxWidth": 300});
+        var popup_c04d01096d0fcd9b31c5bc71178a75b1 = L.popup({"maxWidth": 300});
 
         
-            var html_4d042445f1634333a9cc0a469cd247c7 = $(`<div id="html_4d042445f1634333a9cc0a469cd247c7" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>志々満保育園</td></tr><tr><th>所在地</th><td>今治市桜井6丁目2-1</td></tr><tr><th>電話番号</th><td>0898-48-0254</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_1592366205c64932a6548bb7ff0570dd.setContent(html_4d042445f1634333a9cc0a469cd247c7);
+            
+                var html_f83e02d6da0943c19c358cacd7c4f885 = $(`<div id="html_f83e02d6da0943c19c358cacd7c4f885" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>志々満保育園</td></tr><tr><th>所在地</th><td>今治市桜井6丁目2-1</td></tr><tr><th>電話番号</th><td>0898-48-0254</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_c04d01096d0fcd9b31c5bc71178a75b1.setContent(html_f83e02d6da0943c19c358cacd7c4f885);
+            
         
 
-        marker_8e7158d5d36248439ea85287096065d2.bindPopup(popup_1592366205c64932a6548bb7ff0570dd)
+        marker_6c029a4db303065450008c697796ed0c.bindPopup(popup_c04d01096d0fcd9b31c5bc71178a75b1)
         ;
 
         
     
     
-            var marker_c11accac70c642b49ef1bf383a9d16ca = L.marker(
-                [34.062873, 132.997832],
+            var marker_dd3aab8a0fe15c50bd95d5b1f56817d5 = L.marker(
+                [34.0713606, 132.9880778],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_c0e4efa08b9b47a286fd3093d1710361 = L.AwesomeMarkers.icon(
+            var icon_4e978b033bd5d09bbba800352ac343ef = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_c11accac70c642b49ef1bf383a9d16ca.setIcon(icon_c0e4efa08b9b47a286fd3093d1710361);
+            marker_dd3aab8a0fe15c50bd95d5b1f56817d5.setIcon(icon_4e978b033bd5d09bbba800352ac343ef);
         
     
-        var popup_9a42b8728124425d952c12db1ddfd9d9 = L.popup({"maxWidth": 300});
+        var popup_d87e59b5ca29eee750ce938f0c3c1a2c = L.popup({"maxWidth": 300});
 
         
-            var html_8b94b7bf0a054302aa2357279d0f7c46 = $(`<div id="html_8b94b7bf0a054302aa2357279d0f7c46" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>今治中央乳児保育所</td></tr><tr><th>所在地</th><td>今治市南宝来町1丁目1-4</td></tr><tr><th>電話番号</th><td>0898-23-1355</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td></td></tr><tr><th>４歳</th><td></td></tr><tr><th>５歳</th><td></td></tr></table></div>`)[0];
-            popup_9a42b8728124425d952c12db1ddfd9d9.setContent(html_8b94b7bf0a054302aa2357279d0f7c46);
+            
+                var html_4d09fa9b7e12099d99f3bb8dfe6685a5 = $(`<div id="html_4d09fa9b7e12099d99f3bb8dfe6685a5" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>今治中央ばりっこ保育園</td></tr><tr><th>所在地</th><td>今治市別宮町9丁目5-27</td></tr><tr><th>電話番号</th><td>0898-52-7675 </td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_d87e59b5ca29eee750ce938f0c3c1a2c.setContent(html_4d09fa9b7e12099d99f3bb8dfe6685a5);
+            
         
 
-        marker_c11accac70c642b49ef1bf383a9d16ca.bindPopup(popup_9a42b8728124425d952c12db1ddfd9d9)
+        marker_dd3aab8a0fe15c50bd95d5b1f56817d5.bindPopup(popup_d87e59b5ca29eee750ce938f0c3c1a2c)
         ;
 
         
     
     
-            var marker_34bda98428704e14acbd369e79e43eb2 = L.marker(
-                [34.07543, 132.995074],
-                {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
-        
-    
-            var icon_d9b3b709c688463ba4c84afb60f63b4a = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_34bda98428704e14acbd369e79e43eb2.setIcon(icon_d9b3b709c688463ba4c84afb60f63b4a);
-        
-    
-        var popup_9f9f59a246614e4fbc71bd386d31dbf8 = L.popup({"maxWidth": 300});
-
-        
-            var html_a4459897b9824eba87901ffaa08bff67 = $(`<div id="html_a4459897b9824eba87901ffaa08bff67" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>今治北乳児保育所</td></tr><tr><th>所在地</th><td>今治市室屋町6丁目3-21</td></tr><tr><th>電話番号</th><td>0898-23-7055</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td></td></tr><tr><th>４歳</th><td></td></tr><tr><th>５歳</th><td></td></tr></table></div>`)[0];
-            popup_9f9f59a246614e4fbc71bd386d31dbf8.setContent(html_a4459897b9824eba87901ffaa08bff67);
-        
-
-        marker_34bda98428704e14acbd369e79e43eb2.bindPopup(popup_9f9f59a246614e4fbc71bd386d31dbf8)
-        ;
-
-        
-    
-    
-            var marker_d743e6b32d344ae981295b6d36ec3133 = L.marker(
+            var marker_e12aa863742b67a8a53925f299f5f5a9 = L.marker(
                 [34.058332, 132.974992],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_303897865e494c02bfdf87686802f915 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            var icon_39070a4594307f6e9f45fa6789270901 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_d743e6b32d344ae981295b6d36ec3133.setIcon(icon_303897865e494c02bfdf87686802f915);
+            marker_e12aa863742b67a8a53925f299f5f5a9.setIcon(icon_39070a4594307f6e9f45fa6789270901);
         
     
-        var popup_27bd4f3a69d24a1ebda04a83c9bc1de5 = L.popup({"maxWidth": 300});
+        var popup_95dfe86097460b2fc6a04298e0076e43 = L.popup({"maxWidth": 300});
 
         
-            var html_19de640d8ff14aaa8bb9088e4c2f9ae1 = $(`<div id="html_19de640d8ff14aaa8bb9088e4c2f9ae1" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>白鳩保育園</td></tr><tr><th>所在地</th><td>今治市山路881-89</td></tr><tr><th>電話番号</th><td>0898-32-7364</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_27bd4f3a69d24a1ebda04a83c9bc1de5.setContent(html_19de640d8ff14aaa8bb9088e4c2f9ae1);
+            
+                var html_572397a79dad9d5085cf1aca751e7a27 = $(`<div id="html_572397a79dad9d5085cf1aca751e7a27" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>白鳩保育園</td></tr><tr><th>所在地</th><td>今治市山路881-89</td></tr><tr><th>電話番号</th><td>0898-32-7364</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_95dfe86097460b2fc6a04298e0076e43.setContent(html_572397a79dad9d5085cf1aca751e7a27);
+            
         
 
-        marker_d743e6b32d344ae981295b6d36ec3133.bindPopup(popup_27bd4f3a69d24a1ebda04a83c9bc1de5)
+        marker_e12aa863742b67a8a53925f299f5f5a9.bindPopup(popup_95dfe86097460b2fc6a04298e0076e43)
         ;
 
         
     
     
-            var marker_5449290f29b94d0ba3ea906908d0a0dc = L.marker(
+            var marker_35145be4ebda01aa9d4d0282ff1e2116 = L.marker(
                 [34.085401, 132.990724],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_dc5ec7904e554328a21d6f1e26b25e1b = L.AwesomeMarkers.icon(
+            var icon_6f895dc5ee21f6a39e132b97a565ce2f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_5449290f29b94d0ba3ea906908d0a0dc.setIcon(icon_dc5ec7904e554328a21d6f1e26b25e1b);
+            marker_35145be4ebda01aa9d4d0282ff1e2116.setIcon(icon_6f895dc5ee21f6a39e132b97a565ce2f);
         
     
-        var popup_a8ac85ebedb64525b499aef06daaa583 = L.popup({"maxWidth": 300});
+        var popup_4bbc90016e4e21974ecba6e552669a66 = L.popup({"maxWidth": 300});
 
         
-            var html_b10e1423a73544debab18aada933e77f = $(`<div id="html_b10e1423a73544debab18aada933e77f" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>今治虎岳保育園</td></tr><tr><th>所在地</th><td>今治市鐘場町1丁目2-25</td></tr><tr><th>電話番号</th><td>0898-32-9800</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_a8ac85ebedb64525b499aef06daaa583.setContent(html_b10e1423a73544debab18aada933e77f);
+            
+                var html_6c2be813beb920ab0cbabdb7ec96a82a = $(`<div id="html_6c2be813beb920ab0cbabdb7ec96a82a" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>今治虎岳保育園</td></tr><tr><th>所在地</th><td>今治市鐘場町1丁目2-25</td></tr><tr><th>電話番号</th><td>0898-32-9800</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_4bbc90016e4e21974ecba6e552669a66.setContent(html_6c2be813beb920ab0cbabdb7ec96a82a);
+            
         
 
-        marker_5449290f29b94d0ba3ea906908d0a0dc.bindPopup(popup_a8ac85ebedb64525b499aef06daaa583)
+        marker_35145be4ebda01aa9d4d0282ff1e2116.bindPopup(popup_4bbc90016e4e21974ecba6e552669a66)
         ;
 
         
     
     
-            var marker_10594b953b5a49e7a0a247054648b92e = L.marker(
+            var marker_696277eb455ab0b58a061ae3fe859e85 = L.marker(
                 [33.97732, 133.006719],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_d73f81e7d6ac4595a7458fbda6e61fa2 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            var icon_6d756d6548f33d40192e12135b70d5c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_10594b953b5a49e7a0a247054648b92e.setIcon(icon_d73f81e7d6ac4595a7458fbda6e61fa2);
+            marker_696277eb455ab0b58a061ae3fe859e85.setIcon(icon_6d756d6548f33d40192e12135b70d5c9);
         
     
-        var popup_7ec1c16129c34a4fa30ab77c0065db51 = L.popup({"maxWidth": 300});
+        var popup_be4baf0aa73d598e7d8e7cfdd5934df1 = L.popup({"maxWidth": 300});
 
         
-            var html_3fd8569d7fbf4164bb27c505d43bd503 = $(`<div id="html_3fd8569d7fbf4164bb27c505d43bd503" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>龍門保育園</td></tr><tr><th>所在地</th><td>今治市朝倉上甲803-3</td></tr><tr><th>電話番号</th><td>0898-56-2190</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_7ec1c16129c34a4fa30ab77c0065db51.setContent(html_3fd8569d7fbf4164bb27c505d43bd503);
+            
+                var html_ce057d349082b259dadfd3bba1c537e2 = $(`<div id="html_ce057d349082b259dadfd3bba1c537e2" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>龍門保育園</td></tr><tr><th>所在地</th><td>今治市朝倉上甲803-3</td></tr><tr><th>電話番号</th><td>0898-56-2190</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
+                popup_be4baf0aa73d598e7d8e7cfdd5934df1.setContent(html_ce057d349082b259dadfd3bba1c537e2);
+            
         
 
-        marker_10594b953b5a49e7a0a247054648b92e.bindPopup(popup_7ec1c16129c34a4fa30ab77c0065db51)
+        marker_696277eb455ab0b58a061ae3fe859e85.bindPopup(popup_be4baf0aa73d598e7d8e7cfdd5934df1)
         ;
 
         
     
     
-            var marker_51e071e390f44d8e86a1b20c6d7499e3 = L.marker(
+            var marker_68c4f39dabbe218fd130ad1ec20d9a2c = L.marker(
                 [33.995211, 133.0212733],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_2724c79de1f64a8aa9edaec573d5aa2e = L.AwesomeMarkers.icon(
+            var icon_4cb0d909ca3b5c0e605d422a6a684489 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_51e071e390f44d8e86a1b20c6d7499e3.setIcon(icon_2724c79de1f64a8aa9edaec573d5aa2e);
+            marker_68c4f39dabbe218fd130ad1ec20d9a2c.setIcon(icon_4cb0d909ca3b5c0e605d422a6a684489);
         
     
-        var popup_03380a86784d4517943f6ec4c67bc128 = L.popup({"maxWidth": 300});
+        var popup_c01ee285688b5ce97dc03a7e977e6ed3 = L.popup({"maxWidth": 300});
 
         
-            var html_156f7be9eeec431e9e9caae29a943b6e = $(`<div id="html_156f7be9eeec431e9e9caae29a943b6e" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>朝倉保育園</td></tr><tr><th>所在地</th><td>今治市朝倉北甲356-2</td></tr><tr><th>電話番号</th><td>0898-56-2006</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_03380a86784d4517943f6ec4c67bc128.setContent(html_156f7be9eeec431e9e9caae29a943b6e);
+            
+                var html_f908f7201a99638c75b3ea2ab936b7af = $(`<div id="html_f908f7201a99638c75b3ea2ab936b7af" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>朝倉保育園</td></tr><tr><th>所在地</th><td>今治市朝倉北甲356-2</td></tr><tr><th>電話番号</th><td>0898-56-2006</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_c01ee285688b5ce97dc03a7e977e6ed3.setContent(html_f908f7201a99638c75b3ea2ab936b7af);
+            
         
 
-        marker_51e071e390f44d8e86a1b20c6d7499e3.bindPopup(popup_03380a86784d4517943f6ec4c67bc128)
+        marker_68c4f39dabbe218fd130ad1ec20d9a2c.bindPopup(popup_c01ee285688b5ce97dc03a7e977e6ed3)
         ;
 
         
     
     
-            var marker_de88e356dc0f458589157ade93b339af = L.marker(
+            var marker_d56ba779570ce865bc15e915181b656a = L.marker(
                 [34.071636, 132.9293962],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_93112e3537a64227b41f86cf6e5ce92f = L.AwesomeMarkers.icon(
+            var icon_cc76da56a924df7b6021f0578c98ec0d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_de88e356dc0f458589157ade93b339af.setIcon(icon_93112e3537a64227b41f86cf6e5ce92f);
+            marker_d56ba779570ce865bc15e915181b656a.setIcon(icon_cc76da56a924df7b6021f0578c98ec0d);
         
     
-        var popup_9a0f8c8d505f44f0971d935c76b4fedb = L.popup({"maxWidth": 300});
+        var popup_d9bdd8af7665015c65dea7beaa215137 = L.popup({"maxWidth": 300});
 
         
-            var html_12b226ea46ef4f029e66cde337687b08 = $(`<div id="html_12b226ea46ef4f029e66cde337687b08" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>大井幼児園</td></tr><tr><th>所在地</th><td>今治市大西町九王甲2118-3</td></tr><tr><th>電話番号</th><td>0898-53-2140</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
-            popup_9a0f8c8d505f44f0971d935c76b4fedb.setContent(html_12b226ea46ef4f029e66cde337687b08);
+            
+                var html_29798f747d269b74d35aad92cd09eeb0 = $(`<div id="html_29798f747d269b74d35aad92cd09eeb0" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>大井幼児園</td></tr><tr><th>所在地</th><td>今治市大西町九王甲2118-3</td></tr><tr><th>電話番号</th><td>0898-53-2140</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>○</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>○</td></tr></table></div>`)[0];
+                popup_d9bdd8af7665015c65dea7beaa215137.setContent(html_29798f747d269b74d35aad92cd09eeb0);
+            
         
 
-        marker_de88e356dc0f458589157ade93b339af.bindPopup(popup_9a0f8c8d505f44f0971d935c76b4fedb)
+        marker_d56ba779570ce865bc15e915181b656a.bindPopup(popup_d9bdd8af7665015c65dea7beaa215137)
         ;
 
         
     
     
-            var marker_9ecb9f9caf944106a025ed54e2bf0d40 = L.marker(
+            var marker_768d8b91d7bc841c83a983c8b8373078 = L.marker(
                 [34.061817, 132.913879],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_13644864b32340439ef00fe9c0846722 = L.AwesomeMarkers.icon(
+            var icon_dcf67bf91f099155b3d2b56aea5eb69e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_9ecb9f9caf944106a025ed54e2bf0d40.setIcon(icon_13644864b32340439ef00fe9c0846722);
+            marker_768d8b91d7bc841c83a983c8b8373078.setIcon(icon_dcf67bf91f099155b3d2b56aea5eb69e);
         
     
-        var popup_4fb5fc7705294e19b720eee6832965a9 = L.popup({"maxWidth": 300});
+        var popup_46aa2bdd9e9bd13387780b5681125c45 = L.popup({"maxWidth": 300});
 
         
-            var html_96cf25c508904266baf454bf0ccab08b = $(`<div id="html_96cf25c508904266baf454bf0ccab08b" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>小西保育園</td></tr><tr><th>所在地</th><td>今治市大西町脇甲1726-29</td></tr><tr><th>電話番号</th><td>0898-53-2141</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_4fb5fc7705294e19b720eee6832965a9.setContent(html_96cf25c508904266baf454bf0ccab08b);
+            
+                var html_29a5f39071458e34beefa48bd53fb60f = $(`<div id="html_29a5f39071458e34beefa48bd53fb60f" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>小西保育園</td></tr><tr><th>所在地</th><td>今治市大西町脇甲1726-29</td></tr><tr><th>電話番号</th><td>0898-53-2141</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_46aa2bdd9e9bd13387780b5681125c45.setContent(html_29a5f39071458e34beefa48bd53fb60f);
+            
         
 
-        marker_9ecb9f9caf944106a025ed54e2bf0d40.bindPopup(popup_4fb5fc7705294e19b720eee6832965a9)
+        marker_768d8b91d7bc841c83a983c8b8373078.bindPopup(popup_46aa2bdd9e9bd13387780b5681125c45)
         ;
 
         
     
     
-            var marker_4be58178d50c4c8c91e36f4855bb74aa = L.marker(
+            var marker_d08ae73b8fd2782410e0b4d9ea2b7cb9 = L.marker(
                 [34.071386, 132.969429],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_534e97a5a46a44bb8cac1fd9163d0fd2 = L.AwesomeMarkers.icon(
+            var icon_9ba62a9c908fcb88b9743451c12b7d14 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_4be58178d50c4c8c91e36f4855bb74aa.setIcon(icon_534e97a5a46a44bb8cac1fd9163d0fd2);
+            marker_d08ae73b8fd2782410e0b4d9ea2b7cb9.setIcon(icon_9ba62a9c908fcb88b9743451c12b7d14);
         
     
-        var popup_51421af2be834dca8e8bc69b713298ef = L.popup({"maxWidth": 300});
+        var popup_d9fb51f77d1f70f7fd3bb11449c9db40 = L.popup({"maxWidth": 300});
 
         
-            var html_5bba9457104f4c8796809f487821c0f1 = $(`<div id="html_5bba9457104f4c8796809f487821c0f1" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>しまなみの杜認定こども園</td></tr><tr><th>所在地</th><td>今治市しまなみの杜2-１</td></tr><tr><th>電話番号</th><td>0898-31-1211</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_51421af2be834dca8e8bc69b713298ef.setContent(html_5bba9457104f4c8796809f487821c0f1);
+            
+                var html_67ca63be4c08899ce13afb64a959446a = $(`<div id="html_67ca63be4c08899ce13afb64a959446a" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>しまなみの杜認定こども園</td></tr><tr><th>所在地</th><td>今治市しまなみの杜2-１</td></tr><tr><th>電話番号</th><td>0898-31-1211</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_d9fb51f77d1f70f7fd3bb11449c9db40.setContent(html_67ca63be4c08899ce13afb64a959446a);
+            
         
 
-        marker_4be58178d50c4c8c91e36f4855bb74aa.bindPopup(popup_51421af2be834dca8e8bc69b713298ef)
+        marker_d08ae73b8fd2782410e0b4d9ea2b7cb9.bindPopup(popup_d9fb51f77d1f70f7fd3bb11449c9db40)
         ;
 
         
     
     
-            var marker_229962be1fa24fadbdd96dc44e5c67ad = L.marker(
+            var marker_88f3568cb28fd390428893704d8e0f42 = L.marker(
                 [34.060266, 132.9257852],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_6d2c1924032f4a5ba89860a967aadfb8 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            var icon_a517ba33d767429dfd26a1ffd40f00a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_229962be1fa24fadbdd96dc44e5c67ad.setIcon(icon_6d2c1924032f4a5ba89860a967aadfb8);
+            marker_88f3568cb28fd390428893704d8e0f42.setIcon(icon_a517ba33d767429dfd26a1ffd40f00a6);
         
     
-        var popup_201740b4e3294180b49b75a85ebed94d = L.popup({"maxWidth": 300});
+        var popup_ad7848cf0bb21b70ff7ddc4c90ad50e9 = L.popup({"maxWidth": 300});
 
         
-            var html_e93415ad9aee490fb1bf862b7bbb9bee = $(`<div id="html_e93415ad9aee490fb1bf862b7bbb9bee" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>空と海認定こども園</td></tr><tr><th>所在地</th><td>今治市大西町宮脇甲523-1</td></tr><tr><th>電話番号</th><td>0898-53-4331</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_201740b4e3294180b49b75a85ebed94d.setContent(html_e93415ad9aee490fb1bf862b7bbb9bee);
+            
+                var html_d599c273b201e24a6c5718d15ffe6d5f = $(`<div id="html_d599c273b201e24a6c5718d15ffe6d5f" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>空と海認定こども園</td></tr><tr><th>所在地</th><td>今治市大西町宮脇甲523-1</td></tr><tr><th>電話番号</th><td>0898-53-4331</td></tr><tr><th>入所年齢</th><td>生後6か月</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_ad7848cf0bb21b70ff7ddc4c90ad50e9.setContent(html_d599c273b201e24a6c5718d15ffe6d5f);
+            
         
 
-        marker_229962be1fa24fadbdd96dc44e5c67ad.bindPopup(popup_201740b4e3294180b49b75a85ebed94d)
+        marker_88f3568cb28fd390428893704d8e0f42.bindPopup(popup_ad7848cf0bb21b70ff7ddc4c90ad50e9)
         ;
 
         
     
     
-            var marker_daae1bf4e18c44e9b69b5bb38421c986 = L.marker(
+            var marker_df63aeb7db2adf6fb6066aba423df93e = L.marker(
                 [34.067816, 132.9948645],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_7c6bb2caae784d3787aaf1a07543ce51 = L.AwesomeMarkers.icon(
+            var icon_60a6f3e8eed8c748aa0c46caf4b7c723 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_daae1bf4e18c44e9b69b5bb38421c986.setIcon(icon_7c6bb2caae784d3787aaf1a07543ce51);
+            marker_df63aeb7db2adf6fb6066aba423df93e.setIcon(icon_60a6f3e8eed8c748aa0c46caf4b7c723);
         
     
-        var popup_60bcbad00c754efaab13de921644b6e0 = L.popup({"maxWidth": 300});
+        var popup_e2840a047a2f2f35ba551d4e0ff2474d = L.popup({"maxWidth": 300});
 
         
-            var html_35c26f867a5642e795c30ec1eee4906c = $(`<div id="html_35c26f867a5642e795c30ec1eee4906c" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>幼保連携型認定こども園今治幼稚園</td></tr><tr><th>所在地</th><td>今治市別宮町2丁目4-13</td></tr><tr><th>電話番号</th><td>0898-22-2011</td></tr><tr><th>入所年齢</th><td>満1歳</td></tr><tr><th>０歳</th><td>○</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_60bcbad00c754efaab13de921644b6e0.setContent(html_35c26f867a5642e795c30ec1eee4906c);
+            
+                var html_5fbbf9c4c1cce29554837e36277b4fb7 = $(`<div id="html_5fbbf9c4c1cce29554837e36277b4fb7" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>幼保連携型認定こども園今治幼稚園</td></tr><tr><th>所在地</th><td>今治市別宮町2丁目4-13</td></tr><tr><th>電話番号</th><td>0898-22-2011</td></tr><tr><th>入所年齢</th><td>満1歳</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_e2840a047a2f2f35ba551d4e0ff2474d.setContent(html_5fbbf9c4c1cce29554837e36277b4fb7);
+            
         
 
-        marker_daae1bf4e18c44e9b69b5bb38421c986.bindPopup(popup_60bcbad00c754efaab13de921644b6e0)
+        marker_df63aeb7db2adf6fb6066aba423df93e.bindPopup(popup_e2840a047a2f2f35ba551d4e0ff2474d)
         ;
 
         
     
     
-            var marker_377644f9228e4cc2a8a06c908a8c59d1 = L.marker(
+            var marker_a7431237aeee43bca3d986096dc09e8a = L.marker(
                 [34.049548, 133.011186],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_ed51b78732d44fa39dc59d5a24d695f9 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_377644f9228e4cc2a8a06c908a8c59d1.setIcon(icon_ed51b78732d44fa39dc59d5a24d695f9);
-        
-    
-        var popup_92ced1c03c934de695e0984bb95a038a = L.popup({"maxWidth": 300});
-
-        
-            var html_d9c9dd376ea14353a8f5a7ae71e76d75 = $(`<div id="html_d9c9dd376ea14353a8f5a7ae71e76d75" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>幼保連携型認定こども園晴心幼稚園</td></tr><tr><th>所在地</th><td>今治市南高下町3丁目4-46</td></tr><tr><th>電話番号</th><td>0898-22-4393</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>○</td></tr><tr><th>２歳</th><td>○</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>○</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_92ced1c03c934de695e0984bb95a038a.setContent(html_d9c9dd376ea14353a8f5a7ae71e76d75);
-        
-
-        marker_377644f9228e4cc2a8a06c908a8c59d1.bindPopup(popup_92ced1c03c934de695e0984bb95a038a)
-        ;
-
-        
-    
-    
-            var marker_b0e543d7c8f54e1fbfa7165f730d0d30 = L.marker(
-                [34.104639, 132.963722],
-                {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
-        
-    
-            var icon_4f58de9bcaae4be6bf55bcf1a35fe003 = L.AwesomeMarkers.icon(
+            var icon_88fe6f85a7eaad7c555845e5917e22a6 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_b0e543d7c8f54e1fbfa7165f730d0d30.setIcon(icon_4f58de9bcaae4be6bf55bcf1a35fe003);
+            marker_a7431237aeee43bca3d986096dc09e8a.setIcon(icon_88fe6f85a7eaad7c555845e5917e22a6);
         
     
-        var popup_4eb49420feaf46f9a9f7ac7d748d1668 = L.popup({"maxWidth": 300});
+        var popup_88935225e28134fa8686ac099fa2c950 = L.popup({"maxWidth": 300});
 
         
-            var html_375718b9662e47679504d3e779cfbc79 = $(`<div id="html_375718b9662e47679504d3e779cfbc79" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>はしはまこがく認定こども園</td></tr><tr><th>所在地</th><td>今治市地堀2丁目3-12</td></tr><tr><th>電話番号</th><td>0898-41-9503</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
-            popup_4eb49420feaf46f9a9f7ac7d748d1668.setContent(html_375718b9662e47679504d3e779cfbc79);
+            
+                var html_86ef8bfa881b23d1a8203b7312062440 = $(`<div id="html_86ef8bfa881b23d1a8203b7312062440" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>幼保連携型認定こども園晴心幼稚園</td></tr><tr><th>所在地</th><td>今治市南高下町3丁目4-46</td></tr><tr><th>電話番号</th><td>0898-22-4393</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>△</td></tr><tr><th>４歳</th><td>△</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_88935225e28134fa8686ac099fa2c950.setContent(html_86ef8bfa881b23d1a8203b7312062440);
+            
         
 
-        marker_b0e543d7c8f54e1fbfa7165f730d0d30.bindPopup(popup_4eb49420feaf46f9a9f7ac7d748d1668)
+        marker_a7431237aeee43bca3d986096dc09e8a.bindPopup(popup_88935225e28134fa8686ac099fa2c950)
         ;
 
         
     
     
-            var marker_2b0901059cf346e6b002c0a3716dbfd4 = L.marker(
+            var marker_22f2289252ef4c0f57cb256426b88c12 = L.marker(
+                [34.104639, 132.963722],
+                {}
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
+        
+    
+            var icon_4b942516edc10c71e3f5ea95a2cb80ba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_22f2289252ef4c0f57cb256426b88c12.setIcon(icon_4b942516edc10c71e3f5ea95a2cb80ba);
+        
+    
+        var popup_bfceda830661905f2abd6ce5276ddd3c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5dbe412a8fd4a421b3b46fec53cd6029 = $(`<div id="html_5dbe412a8fd4a421b3b46fec53cd6029" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>はしはまこがく認定こども園</td></tr><tr><th>所在地</th><td>今治市地堀2丁目3-12</td></tr><tr><th>電話番号</th><td>0898-41-9503</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
+                popup_bfceda830661905f2abd6ce5276ddd3c.setContent(html_5dbe412a8fd4a421b3b46fec53cd6029);
+            
+        
+
+        marker_22f2289252ef4c0f57cb256426b88c12.bindPopup(popup_bfceda830661905f2abd6ce5276ddd3c)
+        ;
+
+        
+    
+    
+            var marker_9c05881f8a1cbfef5024d1283514b6b2 = L.marker(
                 [34.03186, 132.985969],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_83f00dd9d5494fed9f9f83d8af812a98 = L.AwesomeMarkers.icon(
+            var icon_a937f7491433821ab95cbfa13a4bd43b = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_2b0901059cf346e6b002c0a3716dbfd4.setIcon(icon_83f00dd9d5494fed9f9f83d8af812a98);
+            marker_9c05881f8a1cbfef5024d1283514b6b2.setIcon(icon_a937f7491433821ab95cbfa13a4bd43b);
         
     
-        var popup_a20a2b474be4486d8f13c15f82d3dbcf = L.popup({"maxWidth": 300});
+        var popup_a788a7c4da0621dde304e16a0deed957 = L.popup({"maxWidth": 300});
 
         
-            var html_355afd3ec65d46229b9508f64d05597e = $(`<div id="html_355afd3ec65d46229b9508f64d05597e" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>認定こども園みどり幼稚園</td></tr><tr><th>所在地</th><td>今治市五十嵐甲60番地</td></tr><tr><th>電話番号</th><td>0898-31-0035</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>×</td></tr></table></div>`)[0];
-            popup_a20a2b474be4486d8f13c15f82d3dbcf.setContent(html_355afd3ec65d46229b9508f64d05597e);
+            
+                var html_22ac92b2405bda9875fad51a0a05a5c4 = $(`<div id="html_22ac92b2405bda9875fad51a0a05a5c4" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>認定こども園みどり幼稚園</td></tr><tr><th>所在地</th><td>今治市五十嵐甲60番地</td></tr><tr><th>電話番号</th><td>0898-31-0035</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>×</td></tr><tr><th>４歳</th><td>×</td></tr><tr><th>５歳</th><td>△</td></tr></table></div>`)[0];
+                popup_a788a7c4da0621dde304e16a0deed957.setContent(html_22ac92b2405bda9875fad51a0a05a5c4);
+            
         
 
-        marker_2b0901059cf346e6b002c0a3716dbfd4.bindPopup(popup_a20a2b474be4486d8f13c15f82d3dbcf)
+        marker_9c05881f8a1cbfef5024d1283514b6b2.bindPopup(popup_a788a7c4da0621dde304e16a0deed957)
         ;
 
         
     
     
-            var marker_aeda4e2125d2437e8e6db1f5943fcc19 = L.marker(
+            var marker_13d18ad3dd22ec413588ce6658a8a203 = L.marker(
+                [34.107596, 132.9433552],
+                {}
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
+        
+    
+            var icon_c54a627fe7fee7718a0ea697cb4d1e0f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_13d18ad3dd22ec413588ce6658a8a203.setIcon(icon_c54a627fe7fee7718a0ea697cb4d1e0f);
+        
+    
+        var popup_4c7e8267dd6be50150184f1d1ba53aad = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_43bd42bee1a4fac500f13f2bdfc93eda = $(`<div id="html_43bd42bee1a4fac500f13f2bdfc93eda" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>小規模保育所たんぽぽ</td></tr><tr><th>所在地</th><td>今治市波方町養老甲764-1</td></tr><tr><th>電話番号</th><td>0898-41-8622</td></tr><tr><th>入所年齢</th><td>満1歳</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>△</td></tr><tr><th>３歳</th><td>－</td></tr><tr><th>４歳</th><td>－</td></tr><tr><th>５歳</th><td>－</td></tr></table></div>`)[0];
+                popup_4c7e8267dd6be50150184f1d1ba53aad.setContent(html_43bd42bee1a4fac500f13f2bdfc93eda);
+            
+        
+
+        marker_13d18ad3dd22ec413588ce6658a8a203.bindPopup(popup_4c7e8267dd6be50150184f1d1ba53aad)
+        ;
+
+        
+    
+    
+            var marker_39f6348b3fa98cc50b938dae57db399b = L.marker(
                 [34.087646, 132.9870994],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_e773db6999754367b6d679a338adc370 = L.AwesomeMarkers.icon(
+            var icon_63d20cde29d5716bcec96432590752c0 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_aeda4e2125d2437e8e6db1f5943fcc19.setIcon(icon_e773db6999754367b6d679a338adc370);
+            marker_39f6348b3fa98cc50b938dae57db399b.setIcon(icon_63d20cde29d5716bcec96432590752c0);
         
     
-        var popup_0a27ab3f5272401795eac5536bee653d = L.popup({"maxWidth": 300});
+        var popup_f01e3f07d9c29c91b865021d53903cfb = L.popup({"maxWidth": 300});
 
         
-            var html_30d31acac659441ea69eafc400a05ecb = $(`<div id="html_30d31acac659441ea69eafc400a05ecb" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>あおいそら保育園</td></tr><tr><th>所在地</th><td>今治市近見町1丁目3-8</td></tr><tr><th>電話番号</th><td>0898-35-4766</td></tr><tr><th>入所年齢</th><td>生後60日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td></td></tr><tr><th>４歳</th><td></td></tr><tr><th>５歳</th><td></td></tr></table></div>`)[0];
-            popup_0a27ab3f5272401795eac5536bee653d.setContent(html_30d31acac659441ea69eafc400a05ecb);
+            
+                var html_4dedcd4799d81f36482702de7f639080 = $(`<div id="html_4dedcd4799d81f36482702de7f639080" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>あおいそら保育園</td></tr><tr><th>所在地</th><td>今治市近見町1丁目3-8</td></tr><tr><th>電話番号</th><td>0898-35-4766</td></tr><tr><th>入所年齢</th><td>生後60日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>－</td></tr><tr><th>４歳</th><td>－</td></tr><tr><th>５歳</th><td>－</td></tr></table></div>`)[0];
+                popup_f01e3f07d9c29c91b865021d53903cfb.setContent(html_4dedcd4799d81f36482702de7f639080);
+            
         
 
-        marker_aeda4e2125d2437e8e6db1f5943fcc19.bindPopup(popup_0a27ab3f5272401795eac5536bee653d)
+        marker_39f6348b3fa98cc50b938dae57db399b.bindPopup(popup_f01e3f07d9c29c91b865021d53903cfb)
         ;
 
         
     
     
-            var marker_5be77af79a6e46d8b55c0a1846e3f4e1 = L.marker(
+            var marker_c85cca8e64895738abe0fc60c0d1709d = L.marker(
                 [34.061582, 132.997043],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_b1d7e1b2a5e448719315075986da5b5f = L.AwesomeMarkers.icon(
+            var icon_f008ee4e1867e1f09d0efd8f2cfa7b40 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_5be77af79a6e46d8b55c0a1846e3f4e1.setIcon(icon_b1d7e1b2a5e448719315075986da5b5f);
+            marker_c85cca8e64895738abe0fc60c0d1709d.setIcon(icon_f008ee4e1867e1f09d0efd8f2cfa7b40);
         
     
-        var popup_5956f150f23142e7bb762e4df5e1bde0 = L.popup({"maxWidth": 300});
+        var popup_1f808cbccef8fb5a58bc5db7e90fe566 = L.popup({"maxWidth": 300});
 
         
-            var html_2382514000f549568421382e42666881 = $(`<div id="html_2382514000f549568421382e42666881" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>エンゼル保育園</td></tr><tr><th>所在地</th><td>今治市南宝来町1丁目4-11</td></tr><tr><th>電話番号</th><td>0898-25-6062</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td></td></tr><tr><th>４歳</th><td></td></tr><tr><th>５歳</th><td></td></tr></table></div>`)[0];
-            popup_5956f150f23142e7bb762e4df5e1bde0.setContent(html_2382514000f549568421382e42666881);
+            
+                var html_6a273a152a484548e9bf1fc96f97d62e = $(`<div id="html_6a273a152a484548e9bf1fc96f97d62e" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>エンゼル保育園</td></tr><tr><th>所在地</th><td>今治市南宝来町1丁目4-11</td></tr><tr><th>電話番号</th><td>0898-25-6062</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>－</td></tr><tr><th>４歳</th><td>－</td></tr><tr><th>５歳</th><td>－</td></tr></table></div>`)[0];
+                popup_1f808cbccef8fb5a58bc5db7e90fe566.setContent(html_6a273a152a484548e9bf1fc96f97d62e);
+            
         
 
-        marker_5be77af79a6e46d8b55c0a1846e3f4e1.bindPopup(popup_5956f150f23142e7bb762e4df5e1bde0)
+        marker_c85cca8e64895738abe0fc60c0d1709d.bindPopup(popup_1f808cbccef8fb5a58bc5db7e90fe566)
         ;
 
         
     
     
-            var marker_4ecda6d02c9f442aaa71d4815fce3f87 = L.marker(
+            var marker_97d5e4c0c8ec7ca99bd73b5720360deb = L.marker(
                 [34.065739, 132.994255],
                 {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
         
     
-            var icon_1a91ed564665407fb86fc7c91fbfcbff = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_4ecda6d02c9f442aaa71d4815fce3f87.setIcon(icon_1a91ed564665407fb86fc7c91fbfcbff);
-        
-    
-        var popup_ddca8ebed0644a0dbc1d9f8b55d00dce = L.popup({"maxWidth": 300});
-
-        
-            var html_c3ff4e48b56c4806a9e208b045f3a97e = $(`<div id="html_c3ff4e48b56c4806a9e208b045f3a97e" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>おひさまえん</td></tr><tr><th>所在地</th><td>今治市北宝来町2丁目3-6</td></tr><tr><th>電話番号</th><td>0898-23-0050</td></tr><tr><th>入所年齢</th><td>生後60日</td></tr><tr><th>０歳</th><td>△</td></tr><tr><th>１歳</th><td>△</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td></td></tr><tr><th>４歳</th><td></td></tr><tr><th>５歳</th><td></td></tr></table></div>`)[0];
-            popup_ddca8ebed0644a0dbc1d9f8b55d00dce.setContent(html_c3ff4e48b56c4806a9e208b045f3a97e);
-        
-
-        marker_4ecda6d02c9f442aaa71d4815fce3f87.bindPopup(popup_ddca8ebed0644a0dbc1d9f8b55d00dce)
-        ;
-
-        
-    
-    
-            var marker_ee527989b8b5482fb6c48e0b5a363011 = L.marker(
-                [34.043456, 133.0211925],
-                {}
-            ).addTo(map_8716d73efa664b09869fd18c40cd7a61);
-        
-    
-            var icon_ddf99e2e2b3e432683682a89ce160d06 = L.AwesomeMarkers.icon(
+            var icon_59eedfe7436877e5460cb0755360b267 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
             );
-            marker_ee527989b8b5482fb6c48e0b5a363011.setIcon(icon_ddf99e2e2b3e432683682a89ce160d06);
+            marker_97d5e4c0c8ec7ca99bd73b5720360deb.setIcon(icon_59eedfe7436877e5460cb0755360b267);
         
     
-        var popup_af9f19dd874444fb8ddf556ed6956e61 = L.popup({"maxWidth": 300});
+        var popup_862b510dc9644ea8df45c883f5a3ff75 = L.popup({"maxWidth": 300});
 
         
-            var html_50e177e8fcf5415980b0bd39863ddc40 = $(`<div id="html_50e177e8fcf5415980b0bd39863ddc40" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>なでしこ保育所</td></tr><tr><th>所在地</th><td>今治市喜田村7丁目2-30</td></tr><tr><th>電話番号</th><td>0898-47-6050</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td></td></tr><tr><th>４歳</th><td></td></tr><tr><th>５歳</th><td></td></tr></table></div>`)[0];
-            popup_af9f19dd874444fb8ddf556ed6956e61.setContent(html_50e177e8fcf5415980b0bd39863ddc40);
+            
+                var html_f92ce519f46c2cb02acc7655c20cb4d3 = $(`<div id="html_f92ce519f46c2cb02acc7655c20cb4d3" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>おひさまえん</td></tr><tr><th>所在地</th><td>今治市北宝来町2丁目3-6</td></tr><tr><th>電話番号</th><td>0898-23-0050</td></tr><tr><th>入所年齢</th><td>生後57日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>－</td></tr><tr><th>４歳</th><td>－</td></tr><tr><th>５歳</th><td>－</td></tr></table></div>`)[0];
+                popup_862b510dc9644ea8df45c883f5a3ff75.setContent(html_f92ce519f46c2cb02acc7655c20cb4d3);
+            
         
 
-        marker_ee527989b8b5482fb6c48e0b5a363011.bindPopup(popup_af9f19dd874444fb8ddf556ed6956e61)
+        marker_97d5e4c0c8ec7ca99bd73b5720360deb.bindPopup(popup_862b510dc9644ea8df45c883f5a3ff75)
         ;
 
         
     
+    
+            var marker_7e60bbbdd25f1a1584495f5f2adf016a = L.marker(
+                [34.043456, 133.0211925],
+                {}
+            ).addTo(feature_group_0a6863165704484d67782eb921bac923);
+        
+    
+            var icon_5dc9c1e2f30f8428b33b2ecae464face = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_7e60bbbdd25f1a1584495f5f2adf016a.setIcon(icon_5dc9c1e2f30f8428b33b2ecae464face);
+        
+    
+        var popup_349da82ed305927a5a20feaa1ca4604f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_45483876ef7e0858e3f3c0a0f380f6b4 = $(`<div id="html_45483876ef7e0858e3f3c0a0f380f6b4" style="width: 100.0%; height: 100.0%;"><table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>なでしこ保育所</td></tr><tr><th>所在地</th><td>今治市喜田村7丁目2-30</td></tr><tr><th>電話番号</th><td>0898-47-6050</td></tr><tr><th>入所年齢</th><td>生後90日</td></tr><tr><th>０歳</th><td>×</td></tr><tr><th>１歳</th><td>×</td></tr><tr><th>２歳</th><td>×</td></tr><tr><th>３歳</th><td>－</td></tr><tr><th>４歳</th><td>－</td></tr><tr><th>５歳</th><td>－</td></tr></table></div>`)[0];
+                popup_349da82ed305927a5a20feaa1ca4604f.setContent(html_45483876ef7e0858e3f3c0a0f380f6b4);
+            
+        
+
+        marker_7e60bbbdd25f1a1584495f5f2adf016a.bindPopup(popup_349da82ed305927a5a20feaa1ca4604f)
+        ;
+
+        
+    
+    
+            var feature_group_5122ec92126e6fffe99b9409740f45f5 = L.featureGroup(
+                {}
+            ).addTo(map_476fac099b86bc3dbae0d71c318897ad);
+        
+    
+            var marker_6aacb341795b22d9659c38585c9fa8c8 = L.marker(
+                [34.054302, 133.007296],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_a47a9a8667fbbe35f6abce7e1fa6e237 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u9ce5\u751f\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_6aacb341795b22d9659c38585c9fa8c8.setIcon(div_icon_a47a9a8667fbbe35f6abce7e1fa6e237);
+        
+    
+            var marker_f75cd6fac56ab242a105a5feb6d0cab6 = L.marker(
+                [34.057515, 132.993141],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_6e0841d86478b52b445c1457a275ba16 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5e38\u76e4\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_f75cd6fac56ab242a105a5feb6d0cab6.setIcon(div_icon_6e0841d86478b52b445c1457a275ba16);
+        
+    
+            var marker_208ac5861ae5297e0c8d16c31477d7a1 = L.marker(
+                [34.059432, 133.011638],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_9b898224a5ca73fe7fc17dbb03181240 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u57ce\u6771\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_208ac5861ae5297e0c8d16c31477d7a1.setIcon(div_icon_9b898224a5ca73fe7fc17dbb03181240);
+        
+    
+            var marker_072eb667dd9681dd5f99a56a65aac6bc = L.marker(
+                [34.063498, 132.957147],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_46aa0c9e97c44fbb6464c1396b6673a6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u4e43\u4e07\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_072eb667dd9681dd5f99a56a65aac6bc.setIcon(div_icon_46aa0c9e97c44fbb6464c1396b6673a6);
+        
+    
+            var marker_b98d5b43e37c14235cd0b827ba51e888 = L.marker(
+                [34.046119, 132.975335],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_2493c1d6a55d9a70618ab6b735ec8f20 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u65e5\u9ad8\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_b98d5b43e37c14235cd0b827ba51e888.setIcon(div_icon_2493c1d6a55d9a70618ab6b735ec8f20);
+        
+    
+            var marker_baef3e7169221a427b55f43dbf970f82 = L.marker(
+                [34.032707, 133.012564],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_cc780de1a6eeecfadcdef694a3959c06 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5bcc\u7530\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_baef3e7169221a427b55f43dbf970f82.setIcon(div_icon_cc780de1a6eeecfadcdef694a3959c06);
+        
+    
+            var marker_7bbef3b9975c203f5a88025b8b4721d1 = L.marker(
+                [34.022279, 133.021928],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_f64ea571e33b68363826ba11f9bfee7b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u685c\u4e95\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_7bbef3b9975c203f5a88025b8b4721d1.setIcon(div_icon_f64ea571e33b68363826ba11f9bfee7b);
+        
+    
+            var marker_911342de6c7a7ab21db9d32790486f9c = L.marker(
+                [34.026563, 132.964389],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_34af41cb18413e5eba0a671b109d1b25 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u65e5\u306e\u51fa\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [42, -5], "iconSize": [84, 30]});
+            marker_911342de6c7a7ab21db9d32790486f9c.setIcon(div_icon_34af41cb18413e5eba0a671b109d1b25);
+        
+    
+            var marker_9643aca95feb595c7fcd6d122e2906da = L.marker(
+                [34.021154, 132.944133],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_876ac907d174258a1a312072b091e50f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u4e5d\u548c\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_9643aca95feb595c7fcd6d122e2906da.setIcon(div_icon_876ac907d174258a1a312072b091e50f);
+        
+    
+            var marker_f0f1a605e5e7106ecf2237f5f01cc7e2 = L.marker(
+                [34.101247, 132.947425],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_578f1a728e2ebb340c453acfc48f5a56 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u6a0b\u53e3\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_f0f1a605e5e7106ecf2237f5f01cc7e2.setIcon(div_icon_578f1a728e2ebb340c453acfc48f5a56);
+        
+    
+            var marker_258d39ebea0e5a4ca46c3531cec95f51 = L.marker(
+                [34.05471, 132.874939],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_3cd3bf3932e1f82dc6ce49c2a5438fb6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u4e80\u5ca1\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_258d39ebea0e5a4ca46c3531cec95f51.setIcon(div_icon_3cd3bf3932e1f82dc6ce49c2a5438fb6);
+        
+    
+            var marker_77ba2cf94882664389057d4c932ba0a3 = L.marker(
+                [34.032671, 132.845044],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_f442665a4911e6ad2a77869896697b5a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u83ca\u9593\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_77ba2cf94882664389057d4c932ba0a3.setIcon(div_icon_f442665a4911e6ad2a77869896697b5a);
+        
+    
+            var marker_b7d02642b469d77ea415d4e0547cd0cb = L.marker(
+                [34.146934, 133.045082],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_17c4898c80f099b9202ce147dad6ded1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5409\u6d77\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [56, -5], "iconSize": [112, 30]});
+            marker_b7d02642b469d77ea415d4e0547cd0cb.setIcon(div_icon_17c4898c80f099b9202ce147dad6ded1);
+        
+    
+            var marker_3a226cead18027776100f16bff9566fd = L.marker(
+                [34.171124, 133.075152],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_cd442ab9709e3396746aa050632abc92 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5bae\u7aaa\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [56, -5], "iconSize": [112, 30]});
+            marker_3a226cead18027776100f16bff9566fd.setIcon(div_icon_cd442ab9709e3396746aa050632abc92);
+        
+    
+            var marker_5225d546fa80d13bde170b3fb17ecb5d = L.marker(
+                [34.205914, 133.112225],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_4f8c1b312bec3fa2c59250d842e78b7d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u4f2f\u65b9\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [56, -5], "iconSize": [112, 30]});
+            marker_5225d546fa80d13bde170b3fb17ecb5d.setIcon(div_icon_4f8c1b312bec3fa2c59250d842e78b7d);
+        
+    
+            var marker_309aadc18fbecc5fa5c61ba25eb5a74d = L.marker(
+                [34.263485, 133.037943],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_11c869420472c8f6f4ebbfa08bf42b21 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u4e0a\u6d66\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [56, -5], "iconSize": [112, 30]});
+            marker_309aadc18fbecc5fa5c61ba25eb5a74d.setIcon(div_icon_11c869420472c8f6f4ebbfa08bf42b21);
+        
+    
+            var marker_4cc7a92653459d7db1e5e4a5876edf9f = L.marker(
+                [34.25139, 132.997168],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_7bd14142f3e5d17bc10c97d2770665af = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5927\u4e09\u5cf6\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [63, -5], "iconSize": [126, 30]});
+            marker_4cc7a92653459d7db1e5e4a5876edf9f.setIcon(div_icon_7bd14142f3e5d17bc10c97d2770665af);
+        
+    
+            var marker_b72d248faf15d12e0aa0bd8eac2e3645 = L.marker(
+                [34.052978, 133.012693],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_86f57492367aea9de8eeac1ee502e05c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u82e5\u8449\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_b72d248faf15d12e0aa0bd8eac2e3645.setIcon(div_icon_86f57492367aea9de8eeac1ee502e05c);
+        
+    
+            var marker_81716b0060c3c657a73b21e647de0465 = L.marker(
+                [34.018814, 133.0419922],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_05db3cc0db3fbb67a1433d93b41d3e8a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5fd7\u3005\u6e80\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [42, -5], "iconSize": [84, 30]});
+            marker_81716b0060c3c657a73b21e647de0465.setIcon(div_icon_05db3cc0db3fbb67a1433d93b41d3e8a);
+        
+    
+            var marker_3ffcfabca4078eb411a06397e3ba7f38 = L.marker(
+                [34.0713606, 132.9880778],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_10ce40fd4f30cfeb0640a15f77ffded0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u4eca\u6cbb\u4e2d\u592e\u3070\u308a\u3063\u3053\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [77, -5], "iconSize": [154, 30]});
+            marker_3ffcfabca4078eb411a06397e3ba7f38.setIcon(div_icon_10ce40fd4f30cfeb0640a15f77ffded0);
+        
+    
+            var marker_ba2b05571d45c006f1a3fc4f12b1b9bf = L.marker(
+                [34.058332, 132.974992],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_34c737e5c0c4bbeb45b8ceb771b87aca = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u767d\u9ce9\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_ba2b05571d45c006f1a3fc4f12b1b9bf.setIcon(div_icon_34c737e5c0c4bbeb45b8ceb771b87aca);
+        
+    
+            var marker_6178aa89d6fbf1b5d47328560a14a2aa = L.marker(
+                [34.085401, 132.990724],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_d01e5d6062368e8fb3c1f13864446d57 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u4eca\u6cbb\u864e\u5cb3\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [49, -5], "iconSize": [98, 30]});
+            marker_6178aa89d6fbf1b5d47328560a14a2aa.setIcon(div_icon_d01e5d6062368e8fb3c1f13864446d57);
+        
+    
+            var marker_37d08d257ae463a7c99a1d07c6ebb77d = L.marker(
+                [33.97732, 133.006719],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_e40ccb159aeb24cba676b1dade71edf1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u9f8d\u9580\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_37d08d257ae463a7c99a1d07c6ebb77d.setIcon(div_icon_e40ccb159aeb24cba676b1dade71edf1);
+        
+    
+            var marker_77dfb4ad6d08d1ef4ed250977dbd90c1 = L.marker(
+                [33.995211, 133.0212733],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_d4f405db1d59f9fb26c80b43a099a052 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u671d\u5009\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_77dfb4ad6d08d1ef4ed250977dbd90c1.setIcon(div_icon_d4f405db1d59f9fb26c80b43a099a052);
+        
+    
+            var marker_d66f828aae0553cda3749ee7404d33d3 = L.marker(
+                [34.071636, 132.9293962],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_b52e6329183b120c001564b6e4b14f47 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5927\u4e95\u5e7c\u5150\u5712\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_d66f828aae0553cda3749ee7404d33d3.setIcon(div_icon_b52e6329183b120c001564b6e4b14f47);
+        
+    
+            var marker_36772ddcca90526334df83e65da93bae = L.marker(
+                [34.061817, 132.913879],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_b594cea3bf5518a33047f6be6f639278 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5c0f\u897f\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [35, -5], "iconSize": [70, 30]});
+            marker_36772ddcca90526334df83e65da93bae.setIcon(div_icon_b594cea3bf5518a33047f6be6f639278);
+        
+    
+            var marker_46f4597550efbe60e958d2b4ba0e70aa = L.marker(
+                [34.071386, 132.969429],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_29b579d00b8e39f3c45fd90b62871f86 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u3057\u307e\u306a\u307f\u306e\u675c\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [84, -5], "iconSize": [168, 30]});
+            marker_46f4597550efbe60e958d2b4ba0e70aa.setIcon(div_icon_29b579d00b8e39f3c45fd90b62871f86);
+        
+    
+            var marker_dd080011517a3dc30fdd12edbe263e05 = L.marker(
+                [34.060266, 132.9257852],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_37611989e2d4edf0182dc769008429ee = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u7a7a\u3068\u6d77\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [63, -5], "iconSize": [126, 30]});
+            marker_dd080011517a3dc30fdd12edbe263e05.setIcon(div_icon_37611989e2d4edf0182dc769008429ee);
+        
+    
+            var marker_05441d85cc6ce343f636922c92ce2b7a = L.marker(
+                [34.067816, 132.9948645],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_ec8be223ba08b75a02d877d6da19a131 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5e7c\u4fdd\u9023\u643a\u578b\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u4eca\u6cbb\u5e7c\u7a1a\u5712\u003c/div\u003e", "iconAnchor": [112, -5], "iconSize": [224, 30]});
+            marker_05441d85cc6ce343f636922c92ce2b7a.setIcon(div_icon_ec8be223ba08b75a02d877d6da19a131);
+        
+    
+            var marker_c8640fd09a736423172f8f37d2ecd023 = L.marker(
+                [34.049548, 133.011186],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_8e5050df0d058efee15b21802c18139e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5e7c\u4fdd\u9023\u643a\u578b\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u6674\u5fc3\u5e7c\u7a1a\u5712\u003c/div\u003e", "iconAnchor": [112, -5], "iconSize": [224, 30]});
+            marker_c8640fd09a736423172f8f37d2ecd023.setIcon(div_icon_8e5050df0d058efee15b21802c18139e);
+        
+    
+            var marker_fa2f2071808b1bd49320e669bcc9a501 = L.marker(
+                [34.104639, 132.963722],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_41828d119032d196ad1d2461e98d7cf3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u306f\u3057\u306f\u307e\u3053\u304c\u304f\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u003c/div\u003e", "iconAnchor": [91, -5], "iconSize": [182, 30]});
+            marker_fa2f2071808b1bd49320e669bcc9a501.setIcon(div_icon_41828d119032d196ad1d2461e98d7cf3);
+        
+    
+            var marker_d7238e94b0c15b4d527c5f6184832645 = L.marker(
+                [34.03186, 132.985969],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_912c7c9021075c85bced84acbb6f05b9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u8a8d\u5b9a\u3053\u3069\u3082\u5712\u307f\u3069\u308a\u5e7c\u7a1a\u5712\u003c/div\u003e", "iconAnchor": [84, -5], "iconSize": [168, 30]});
+            marker_d7238e94b0c15b4d527c5f6184832645.setIcon(div_icon_912c7c9021075c85bced84acbb6f05b9);
+        
+    
+            var marker_c8bedcc5673b3cb82e9170d67831e0cd = L.marker(
+                [34.107596, 132.9433552],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_72144ba8967831b7754e6d0976c27108 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u5c0f\u898f\u6a21\u4fdd\u80b2\u6240\u305f\u3093\u307d\u307d\u003c/div\u003e", "iconAnchor": [70, -5], "iconSize": [140, 30]});
+            marker_c8bedcc5673b3cb82e9170d67831e0cd.setIcon(div_icon_72144ba8967831b7754e6d0976c27108);
+        
+    
+            var marker_d9fe5f39b517b15dea6203f25cd8d2f7 = L.marker(
+                [34.087646, 132.9870994],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_c5c5a7f618cc5a1aef3053cd473e9d35 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u3042\u304a\u3044\u305d\u3089\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [56, -5], "iconSize": [112, 30]});
+            marker_d9fe5f39b517b15dea6203f25cd8d2f7.setIcon(div_icon_c5c5a7f618cc5a1aef3053cd473e9d35);
+        
+    
+            var marker_dff31818b35cef8ba05d3ee14996f978 = L.marker(
+                [34.061582, 132.997043],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_3719edbea94560e6425dd3f69fdc00fb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u30a8\u30f3\u30bc\u30eb\u4fdd\u80b2\u5712\u003c/div\u003e", "iconAnchor": [49, -5], "iconSize": [98, 30]});
+            marker_dff31818b35cef8ba05d3ee14996f978.setIcon(div_icon_3719edbea94560e6425dd3f69fdc00fb);
+        
+    
+            var marker_9ba743441d5ea98d36e6b24f355c2364 = L.marker(
+                [34.065739, 132.994255],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_e50fe6bbeb6b850b29977d73c735892a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u304a\u3072\u3055\u307e\u3048\u3093\u003c/div\u003e", "iconAnchor": [42, -5], "iconSize": [84, 30]});
+            marker_9ba743441d5ea98d36e6b24f355c2364.setIcon(div_icon_e50fe6bbeb6b850b29977d73c735892a);
+        
+    
+            var marker_5dacc8627ac809f7a487f72a4bd77733 = L.marker(
+                [34.043456, 133.0211925],
+                {}
+            ).addTo(feature_group_5122ec92126e6fffe99b9409740f45f5);
+        
+    
+            var div_icon_ac0a4875faf54a794366d9cf77e0f5d9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)\"\u003e\u306a\u3067\u3057\u3053\u4fdd\u80b2\u6240\u003c/div\u003e", "iconAnchor": [49, -5], "iconSize": [98, 30]});
+            marker_5dacc8627ac809f7a487f72a4bd77733.setIcon(div_icon_ac0a4875faf54a794366d9cf77e0f5d9);
+        
 </script>
+</html>
