@@ -103,34 +103,62 @@ folium.plugins.LocateControl(position="bottomright").add_to(map)
 # 距離測定
 folium.plugins.MeasureControl().add_to(map)
 
-fg1 = folium.FeatureGroup(name="アイコン").add_to(map)
-fg2 = folium.FeatureGroup(name="施設名").add_to(map)
+fg1 = folium.FeatureGroup(name="募集中").add_to(map)
+fg2 = folium.FeatureGroup(name="空きなし").add_to(map)
 
 for i, r in df_map.iterrows():
 
     n = len(r["施設名"])
 
-    fg1.add_child(
-        folium.Marker(
-            location=[r["緯度"], r["経度"]],
-            popup=folium.Popup(
-                f'<table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>{r["施設名"]}</td></tr><tr><th>所在地</th><td>{r["所在地"]}</td></tr><tr><th>電話番号</th><td>{r["電話番号"]}</td></tr><tr><th>入所年齢</th><td>{r["入所年齢"]}</td></tr><tr><th>０歳</th><td>{r["０歳"]}</td></tr><tr><th>１歳</th><td>{r["１歳"]}</td></tr><tr><th>２歳</th><td>{r["２歳"]}</td></tr><tr><th>３歳</th><td>{r["３歳"]}</td></tr><tr><th>４歳</th><td>{r["４歳"]}</td></tr><tr><th>５歳</th><td>{r["５歳"]}</td></tr></table>',
-                max_width=300,
-            ),
-            icon=folium.Icon(color=r["color"]),
-        ).add_to(map)
-    )
+    if r["color"] != "black":
 
-    fg2.add_child(
-        folium.Marker(
-            location=[r["緯度"], r["経度"]],
-            icon=DivIcon(
-                icon_size=(14 * n, 30),
-                icon_anchor=(7 * n, -5),
-                html=f'<div style="text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)">{r["施設名"]}</div>',
+        fg1.add_child(
+            folium.Marker(
+                location=[r["緯度"], r["経度"]],
+                popup=folium.Popup(
+                    f'<table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>{r["施設名"]}</td></tr><tr><th>所在地</th><td>{r["所在地"]}</td></tr><tr><th>電話番号</th><td>{r["電話番号"]}</td></tr><tr><th>入所年齢</th><td>{r["入所年齢"]}</td></tr><tr><th>０歳</th><td>{r["０歳"]}</td></tr><tr><th>１歳</th><td>{r["１歳"]}</td></tr><tr><th>２歳</th><td>{r["２歳"]}</td></tr><tr><th>３歳</th><td>{r["３歳"]}</td></tr><tr><th>４歳</th><td>{r["４歳"]}</td></tr><tr><th>５歳</th><td>{r["５歳"]}</td></tr></table>',
+                    max_width=300,
+                ),
+                icon=folium.Icon(color=r["color"]),
             ),
         )
-    )
+
+        fg1.add_child(
+            folium.Marker(
+                location=[r["緯度"], r["経度"]],
+                icon=DivIcon(
+                    icon_size=(14 * n, 30),
+                    icon_anchor=(7 * n, -5),
+                    html=f'<div style="text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)">{r["施設名"]}</div>',
+                ),
+            )
+        )
+
+    else:
+
+        fg2.add_child(
+            folium.Marker(
+                location=[r["緯度"], r["経度"]],
+                popup=folium.Popup(
+                    f'<table border="1" style="border-collapse: collapse"><tr><th>施設名</th><td>{r["施設名"]}</td></tr><tr><th>所在地</th><td>{r["所在地"]}</td></tr><tr><th>電話番号</th><td>{r["電話番号"]}</td></tr><tr><th>入所年齢</th><td>{r["入所年齢"]}</td></tr><tr><th>０歳</th><td>{r["０歳"]}</td></tr><tr><th>１歳</th><td>{r["１歳"]}</td></tr><tr><th>２歳</th><td>{r["２歳"]}</td></tr><tr><th>３歳</th><td>{r["３歳"]}</td></tr><tr><th>４歳</th><td>{r["４歳"]}</td></tr><tr><th>５歳</th><td>{r["５歳"]}</td></tr></table>',
+                    max_width=300,
+                ),
+                icon=folium.Icon(color=r["color"]),
+            )
+        )
+
+        fg2.add_child(
+            folium.Marker(
+                location=[r["緯度"], r["経度"]],
+                icon=DivIcon(
+                    icon_size=(14 * n, 30),
+                    icon_anchor=(7 * n, -5),
+                    html=f'<div style="text-align:center; font-weight: bold; font-size: 10pt; background-color:rgba(255,255,255,0.8)">{r["施設名"]}</div>',
+                ),
+            )
+        )
+
+folium.LayerControl().add_to(map)
 
 p_map = pathlib.Path("map", "index.html")
 map.save(str(p_map))
